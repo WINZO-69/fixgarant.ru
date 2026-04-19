@@ -1,0 +1,1993 @@
+/* =============================================
+   ОБЩИЕ СТИЛИ (сброс, шрифт, переменные)
+   ============================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+  color: #000000;
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font: inherit;
+}
+
+
+/* ========== ГЛАВНЫЙ ЭКРАН ========== */
+
+/* --- Секция hero --- */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+/* --- Фон-фотография --- */
+.hero__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Мобильная фотография (скрыта на ПК) */
+.hero__image-mobile {
+  display: none;
+}
+
+.hero__image-mobile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* --- Шапка (Header) --- */
+.header {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  background: #ffffff;
+}
+
+.header__container {
+  max-width: 1366px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+}
+
+/* --- Логотип --- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-shrink: 0;
+}
+
+.logo__icons {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo__contract {
+  width: 40px;
+  height: 48px;
+}
+
+.logo__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo__fix,
+.logo__garant {
+  font-size: 18px;
+  font-weight: 600;
+  color: #158AFF;
+  display: block;
+}
+
+/* --- Навигация ПК --- */
+.nav {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav__link {
+  font-size: 18px;
+  font-weight: 400;
+  color: #000000;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.nav__link:hover {
+  color: #158AFF;
+}
+
+/* --- Кнопка телефона ПК --- */
+.phone-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 20px;
+  border: 1px solid #158AFF;
+  border-radius: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease;
+}
+
+.phone-btn:hover {
+  background-color: #158AFF;
+}
+
+.phone-btn:hover .phone-btn__number {
+  color: #ffffff;
+}
+
+.phone-btn__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Иконка телефона при ховере (скрыта по умолчанию) */
+.phone-btn__icon-hover {
+  display: none;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.phone-btn:hover .phone-btn__icon {
+  display: none;
+}
+
+.phone-btn:hover .phone-btn__icon-hover {
+  display: block;
+}
+
+.phone-btn__number {
+  font-size: 14px;
+  font-weight: 400;
+  color: #000000;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.phone-btn__tooltip {
+  position: absolute;
+  bottom: -39px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333333;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.phone-btn__tooltip::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #333333;
+}
+
+/* Подсказка «Скопировано!» — синий фон */
+.phone-btn__tooltip.copied {
+  background: #158AFF;
+}
+
+.phone-btn__tooltip.copied::after {
+  border-bottom-color: #158AFF;
+}
+
+.phone-btn__tooltip.visible {
+  opacity: 1;
+}
+
+/* --- Бургер (скрыт на ПК) --- */
+.burger {
+  display: none;
+  width: 42px;
+  height: 30px;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 9999;
+  padding: 0;
+}
+
+.burger__open,
+.burger__close {
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.2s ease;
+}
+
+.burger__close {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+}
+
+.burger.active .burger__open {
+  opacity: 0;
+}
+
+.burger.active .burger__close {
+  opacity: 1;
+}
+
+/* --- Мобильное меню (скрыто на ПК) --- */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 150;
+  pointer-events: none;
+}
+
+.mobile-menu.active {
+  pointer-events: all;
+}
+
+.mobile-menu__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-menu.active .mobile-menu__overlay {
+  opacity: 1;
+}
+
+.mobile-menu__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 40px 20px 40px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mobile-menu.active .mobile-menu__content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Навигация в мобильном меню */
+.mobile-menu__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.mobile-menu__link {
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: 0.03em;
+  transition: color 0.2s ease;
+}
+
+.mobile-menu__link:active {
+  color: #158AFF;
+}
+
+/* Телефон в мобильном меню */
+.mobile-menu__phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 335px;
+  max-width: 100%;
+  padding: 12px 20px;
+  background: #158AFF;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.03em;
+  margin-top: 60px;
+}
+
+.mobile-menu__phone-icon {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+/* --- Контент героя поверх фото --- */
+.hero__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 150px;
+}
+
+.hero__container {
+  max-width: 1366px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 40px;
+}
+
+.hero__title {
+  font-family: 'Russo One', sans-serif; 
+  font-size: 60px;
+  font-weight: 400;
+  color: #16599C;
+  line-height: 1.15;
+  max-width: 700px;
+  letter-spacing: 0.05em; 
+}
+
+.hero__subtitle {
+  font-size: 28px;
+  font-weight: 500;
+  color: #000000;
+  line-height: 1.5;
+  margin-top: 40px;
+  max-width: 650px;
+}
+
+.hero__btn {
+  display: inline-block;
+  margin-top: 60px;
+  padding: 12px 20px;
+  background: #158AFF;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.hero__btn:hover {
+  background: #0d6fcc;
+}
+
+.hero__btn:active {
+  background: #0a5aa8;
+}
+
+/* --- Стрелка вниз --- */
+.hero__arrow {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  animation: arrowBounce 2s ease-in-out infinite;
+}
+
+.hero__arrow img {
+  width: 32px;
+  height: 32px;
+}
+
+/* Иконка стрелки при ховере (скрыта по умолчанию) */
+.hero__arrow-hover {
+  display: none;
+  width: 32px;
+  height: 32px;
+}
+
+.hero__arrow:hover img:not(.hero__arrow-hover) {
+  display: none;
+}
+
+.hero__arrow:hover .hero__arrow-hover {
+  display: block;
+}
+
+@keyframes arrowBounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(8px);
+  }
+}
+
+/* ========== ПОЧЕМУ МЫ ========== */
+
+
+
+.why-us {
+  padding-top: 120px;
+}
+
+
+
+.why-us__container {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+
+
+.why-us__title {
+  font-size: 40px;
+  font-weight: 400;
+  color: #000000;
+  text-align: center;
+}
+
+
+
+.why-us__cards {
+  display: flex;
+  gap: 19px;
+  margin-top: 40px;
+}
+
+
+
+.why-us__card {
+  width: 327px;
+  min-height: 255px;
+  border: 1px solid #AAAAAA;
+  border-radius: 12px;
+  display: grid;
+  grid-template-rows: 140px auto auto;
+  justify-items: start;
+  padding: 20px 15px 25px;
+  text-align: left;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.why-us__card:hover {
+  transform: translateY(-10px);
+  background-color: rgba(21, 138, 255, 0.1);
+  border-color: #158AFF;
+}
+
+
+
+.why-us__icon {
+  width: 60px;
+  height: 60px;
+  justify-self: center;
+  align-self: center;
+}
+
+
+
+.why-us__card-title {
+  font-size: 22px;
+  font-weight: 400;
+  color: #000000;
+  white-space: nowrap;
+}
+
+
+
+.why-us__card-text {
+  font-size: 18px;
+  font-weight: 400;
+  color: #000000;
+  line-height: 1.4;
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* ========== УСЛУГИ ========== */
+
+.services {
+  padding-top: 120px;
+}
+
+.services__container {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.services__title {
+  font-size: 40px;
+  font-weight: 400;
+  color: #000000;
+  text-align: center;
+}
+
+.services__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.services__card {
+  width: calc(50% - 10px);
+  border: 1px solid #AAAAAA;
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-start;
+  padding: 20px 0px;
+  gap: 0px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.services__card:hover {
+  background-color: rgba(21, 138, 255, 0.1);
+  border-color: #158AFF;
+}
+
+.services__icon {
+  width: 176px;
+  height: 176px;
+  flex-shrink: 0;
+  margin-left: -13px;
+}
+
+.services__info {
+  display: flex;
+  flex-direction: column;
+  margin-left: -15px;
+}
+
+.services__card-title {
+  font-size: 20px;
+  font-weight: 400;
+  color: #000000;
+  margin-top: -7px;
+}
+
+.services__card-text {
+  font-size: 18px;
+  font-weight: 400;
+  color: #000000;
+  line-height: 1.4;
+  margin-top: 10px;
+}
+
+.services__card-price {
+  font-size: 18px;
+  font-weight: 400;
+  color: #000000;
+  margin-top: 20px;
+}
+
+.services__buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.services__btn-request {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  background: #158AFF;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.services__btn-request:hover {
+  background: #0d6fcc;
+}
+
+.services__btn-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border: 1px solid #158AFF;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+  letter-spacing: 0.03em;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.services__btn-phone:hover {
+  background-color: #158AFF;
+  color: #ffffff;
+}
+
+.services__btn-phone-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.services__btn-phone-icon-hover {
+  display: none;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.services__btn-phone:hover .services__btn-phone-icon {
+  display: none;
+}
+
+.services__btn-phone:hover .services__btn-phone-icon-hover {
+  display: block;
+}
+
+.services__btn-phone--call {
+  display: none;
+}
+
+.services__btn-phone--copy {
+  display: inline-flex;
+}
+
+/* ========== ЭТАПЫ РАБОТЫ ========== */
+
+.steps {
+  padding-top: 120px;
+}
+
+.steps__container {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.steps__title {
+  font-size: 40px;
+  font-weight: 400;
+  color: #000000;
+  text-align: center;
+}
+
+.steps__cards {
+  display: flex;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.steps__card {
+  position: relative;
+  flex: 1;
+  height: 460px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.steps__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.steps__card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+    rgba(0, 0, 0, 0) 0%, 
+    rgba(0, 0, 0, 0) 40%,
+    rgba(0, 0, 0, 0.2) 55%,
+    rgba(0, 0, 0, 0.5) 65%, 
+    rgba(0, 0, 0, 0.8) 80%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.steps__text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 15px 30px;
+  font-size: 24px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.3;
+  letter-spacing: 0.03em;
+  z-index: 2;
+}
+
+/* ========== ОТЗЫВЫ ========== */
+
+.reviews {
+  padding-top: 120px;
+}
+
+.reviews__container {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reviews__title {
+  font-size: 40px;
+  font-weight: 400;
+  color: #000000;
+  text-align: center;
+}
+
+/* Обёртка трека и стрелок */
+.reviews__track-wrap {
+  width: 100%;
+  margin-top: 40px;
+}
+
+/* Стрелки — строка, прижата вправо */
+.reviews__arrows {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+/* Стрелки */
+.reviews__arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.reviews__arrow-default {
+  width: 40px;
+  height: 40px;
+  display: block;
+}
+
+.reviews__arrow-hover {
+  width: 40px;
+  height: 40px;
+  display: none;
+}
+
+.reviews__arrow:hover .reviews__arrow-default {
+  display: none;
+}
+
+.reviews__arrow:hover .reviews__arrow-hover {
+  display: block;
+}
+
+/* Трек */
+.reviews__track {
+  width: 100%;
+}
+
+/* Карточка */
+.reviews__card {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid #AAAAAA;
+  border-radius: 12px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.reviews__card.active {
+  display: flex;
+}
+
+.reviews__text {
+  font-size: 18px;
+  font-weight: 400;
+  color: #000000;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Нижняя часть: фото+имя слева, звёзды справа */
+.reviews__footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.reviews__person {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.reviews__avatar {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+}
+
+.reviews__meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.reviews__name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  line-height: 1.2;
+}
+
+.reviews__date {
+  font-size: 14px;
+  font-weight: 400;
+  color: #555555;
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+.reviews__stars {
+  flex-shrink: 0;
+}
+
+/* Кнопка Google Maps */
+.reviews__google-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 20px;
+  background: transparent;
+  color: #158AFF;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.03em;
+  border-radius: 8px;
+  border: 1px solid #158AFF;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.reviews__google-btn:hover {
+  background: #158AFF;
+  color: #ffffff;
+}
+
+.reviews__google-btn:active {
+  background: #0a5aa8;
+  border-color: #0a5aa8;
+  color: #ffffff;
+}
+
+/* ========== ВОПРОС-ОТВЕТ ========== */
+
+.faq {
+  padding-top: 120px;
+}
+
+.faq__container {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.faq__title {
+  font-size: 40px;
+  font-weight: 400;
+  color: #000000;
+  text-align: center;
+}
+
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+/* Один вопрос-ответ */
+.faq__item {
+  border: 1px solid #AAAAAA;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.faq__item.active {
+  border-color: #158AFF;
+}
+
+/* Строка вопроса */
+.faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px 20px 20px;
+  cursor: pointer;
+  position: relative;
+  min-height: 64px;
+}
+
+.faq__question-text {
+  font-size: 18px;
+  font-weight: 400;
+  color: #000000;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+}
+
+/* Стрелка — всегда по центру высоты */
+.faq__arrow {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.faq__item.active .faq__arrow {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* Блок ответа — скрыт по умолчанию */
+.faq__answer {
+  display: none;
+  padding: 0 20px 20px 20px;
+}
+
+.faq__item.active .faq__answer {
+  display: block;
+}
+
+/* Разделитель */
+.faq__divider {
+  width: 600px;
+  max-width: 100%;
+  height: 1px;
+  background: #158AFF;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.faq__answer-text {
+  font-size: 18px;
+  font-weight: 400;
+  color: #000000;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+}
+
+.faq__item:hover {
+  border-color: #158AFF;
+}
+
+
+/* ========== CTA ========== */
+
+.cta {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  margin-top: 120px;
+}
+
+.cta__image {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+}
+
+.cta__image img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.cta__image::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.cta__content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 0 40px;
+}
+
+.cta__title {
+  font-size: 40px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: 0.03em;
+}
+
+.cta__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== Split button ===== */
+
+.cta__split-btn {
+  display: inline-flex;
+  align-items: stretch;
+  height: 52px;
+  border-radius: 10px;
+  overflow: visible;
+  border: 1px solid #ffffff;
+  position: relative;
+}
+
+.cta__split-left {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 32px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  background: #158AFF;
+  border-radius: 10px 0 0 10px;
+  transition: background 0.25s ease, backdrop-filter 0.25s ease;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.cta__split-right {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 32px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 0 10px 10px 0;
+  transition: background 0.25s ease, backdrop-filter 0.25s ease;
+  white-space: nowrap;
+  cursor: pointer;
+  position: relative;
+}
+
+.cta__split-divider {
+  width: 1px;
+  background: #ffffff;
+  flex-shrink: 0;
+}
+
+.cta__phone-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  filter: brightness(0) invert(1);
+}
+
+/* ===== Ховер ===== */
+
+.cta__split-btn.hover-right .cta__split-left {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.cta__split-btn.hover-right .cta__split-right {
+  background: #158AFF;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.cta__split-btn.hover-left .cta__split-left {
+  background: #158AFF;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.cta__split-btn.hover-left .cta__split-right {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.cta__tooltip {
+  position: absolute;
+  bottom: -39px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333333;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  border: 1px solid #ffffff;
+}
+
+.cta__tooltip::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #ffffff;
+}
+
+.cta__tooltip.copied {
+  background: #158AFF;
+}
+
+.cta__tooltip.copied::after {
+  border-bottom-color: #158AFF;
+}
+
+.cta__tooltip.visible {
+  opacity: 1;
+}
+
+/* =============================================
+   АДАПТИВ — ПЛАНШЕТ (до 1024px)
+   ============================================= */
+
+@media (max-width: 1024px) {
+
+  /* --- ГЛАВНЫЙ ЭКРАН (планшет) --- */
+
+  .header__container {
+    padding: 20px 20px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .phone-btn {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+
+  /* ПК-фото скрываем, мобильное показываем */
+  .hero__image {
+    display: none;
+  }
+
+  .hero__image-mobile {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .hero__container {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero__title {
+    font-size: 34px;
+    font-weight: 400;
+    color: #ffffff;
+    max-width: 100%;
+    letter-spacing: 0.10em;
+  }
+
+  .hero__subtitle {
+    font-size: 22px;
+    margin-top: 20px;
+    max-width: 100%;
+    color: #ffffff;
+  }
+
+  .hero__btn {
+    margin-top: 40px;
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+
+  /* Затемнение 30% поверх мобильного фото */
+  .hero__image-mobile::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  .hero__arrow {
+    bottom: 30px;
+  }
+
+  .hero__content {
+   align-items: center;
+   padding-top: 0;
+   }
+
+
+
+    /* --- ПОЧЕМУ МЫ (планшет) --- */
+
+  .why-us {
+    padding-top: 120px;
+  }
+
+  .why-us__container 
+  {
+  padding: 0 20px;
+  }
+
+  .why-us__title {
+    font-size: 32px;
+  }
+
+  .why-us__cards {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .why-us__card {
+    width: calc(50% - 10px);
+    height: auto;
+    padding: 20px 15px 25px;
+    display: grid;
+    grid-template-rows: 100px auto auto;
+    justify-items: start;
+  }
+
+  .why-us__icon {
+    justify-self: center;
+    min-height: auto;
+    height: auto;
+  }
+
+  .why-us__card-title {
+    font-size: 20px;
+    white-space: normal;
+  }
+
+  .why-us__card-text {
+    font-size: 16px;
+  }
+
+    /* --- УСЛУГИ (планшет) --- */
+
+  .services {
+    padding-top: 120px;
+  }
+
+  .services__container {
+    padding: 0 20px;
+  }
+
+  .services__title {
+    font-size: 32px;
+  }
+
+  .services__cards {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .services__card {
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .services__icon {
+    width: 170px;
+    height: 170px;
+    margin-left: 0;
+  }
+
+  .services__info {
+    margin-left: 0;
+  }
+
+  .services__card-title {
+    font-size: 20px;
+    margin-top: 0;
+  }
+
+  .services__card-text {
+    font-size: 16px;
+  }
+
+  .services__card-price {
+    font-size: 16px;
+  }
+
+  .services__buttons {
+    gap: 10px;
+  }
+
+  .services__btn-request {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .services__btn-phone {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+    .services__btn-phone--call {
+    display: inline-flex;
+  }
+
+  .services__btn-phone--copy {
+    display: none;
+  }
+
+    /* --- ЭТАПЫ РАБОТЫ (планшет) --- */
+
+  .steps {
+    padding-top: 120px;
+  }
+
+  .steps__container {
+    padding: 0 20px;
+  }
+
+  .steps__title {
+    font-size: 32px;
+  }
+
+  .steps__cards {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .steps__card {
+    height: 380px;
+  }
+
+  .steps__text {
+    font-size: 22px;
+    padding: 0 20px 24px;
+  }
+
+  
+  /* --- ОТЗЫВЫ (планшет) --- */
+
+  .reviews {
+    padding-top: 120px;
+  }
+
+  .reviews__container {
+    padding: 0 20px;
+  }
+
+  .reviews__title {
+    font-size: 32px;
+  }
+
+  .reviews__text {
+    font-size: 16px;
+  }
+
+  .reviews__name {
+    font-size: 15px;
+  }
+
+  .reviews__date {
+    font-size: 13px;
+  }
+
+  .reviews__google-btn {
+    font-size: 16px;
+  }
+
+    /* --- FAQ (планшет) --- */
+
+  .faq {
+    padding-top: 120px;
+  }
+
+  .faq__container {
+    padding: 0 20px;
+  }
+
+  .faq__title {
+    font-size: 32px;
+  }
+
+  .faq__question-text {
+    font-size: 16px;
+  }
+
+  .faq__answer-text {
+    font-size: 16px;
+  }
+
+  .faq__divider {
+    width: 100%;
+  }
+
+    .faq__list {
+    width: 100%;
+  }
+
+  .faq__item {
+    width: 100%;
+  }
+
+  /* --- CTA (планшет) --- */
+.cta {
+  margin-top: 120px;
+  height: auto;
+  padding: 60px 20px;
+}
+
+.cta__title {
+  font-size: 32px;
+}
+
+.cta__split-btn {
+  flex-direction: row;
+  width: 100%;
+  max-width: 500px;
+}
+}
+
+
+/* =============================================
+   АДАПТИВ — СМАРТФОН (до 576px)
+   ============================================= */
+
+@media (max-width: 576px) {
+
+  /* --- ГЛАВНЫЙ ЭКРАН (смартфон) --- */
+
+  .header__container {
+    max-width: 100%;
+    padding: 16px 20px;
+  }
+
+  .logo__icons {
+    width: 32px;
+    height: 38px;
+  }
+
+  .logo__contract {
+    width: 32px;
+    height: 38px;
+  }
+
+  .logo {
+    gap: 15px;
+  }
+
+  .logo__fix,
+  .logo__garant {
+    font-size: 15px;
+  }
+
+  .hero__container {
+    max-width: 100%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero__title {
+    font-size: 22px;
+    font-weight: 400;
+    color: #ffffff;
+    letter-spacing: 0.10em;
+  }
+
+  .hero__subtitle {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #ffffff;
+  }
+
+  .hero__btn {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    font-size: 18px;
+    padding: 12px 20px;
+  }
+
+  .hero__arrow {
+    bottom: 20px;
+  }
+
+  .mobile-menu__phone {
+    width: 100%;
+  }
+
+  /* --- ПОЧЕМУ МЫ (смартфон) --- */
+
+  .why-us {
+    padding-top: 80px;
+  }
+
+  .why-us__container {
+    padding: 0 20px;
+  }
+
+  .why-us__title {
+    font-size: 28px;
+  }
+
+  .why-us__cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .why-us__card {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 20px 15px 25px;
+    grid-template-rows: 150px auto auto;
+  }
+
+  .why-us__card-title {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .why-us__card-text {
+    font-size: 16px;
+  }
+  
+    /* --- УСЛУГИ (смартфон) --- */
+
+  .services {
+    padding-top: 80px;
+  }
+
+  .services__container {
+    padding: 0 20px;
+  }
+
+  .services__title {
+    font-size: 28px;
+  }
+
+  .services__cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .services__card {
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .services__icon {
+    width: 150px;
+    height: 150px;
+    margin-left: 0;
+  }
+
+  .services__info {
+    margin-left: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .services__card-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 0;
+  }
+
+  .services__card-text {
+    font-size: 16px;
+  }
+
+  .services__card-price {
+    font-size: 16px;
+    margin-top: 15px;
+  }
+
+  .services__buttons {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .services__btn-request {
+    font-size: 16px;
+    padding: 12px 20px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .services__btn-phone {
+    font-size: 16px;
+    padding: 12px 20px;
+    width: 100%;
+    justify-content: center;
+  }
+
+    .services__btn-phone--call {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .services__btn-phone--copy {
+    display: none;
+  }
+
+    /* --- ЭТАПЫ РАБОТЫ (смартфон) --- */
+
+  .steps {
+    padding-top: 80px;
+  }
+
+  .steps__container {
+    padding: 0 20px;
+  }
+
+  .steps__title {
+    font-size: 28px;
+  }
+
+  .steps__cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .steps__card {
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+  }
+
+  .steps__text {
+    font-size: 18px;
+    padding: 0 15px 20px;
+  }
+
+  /* --- ОТЗЫВЫ (смартфон) --- */
+
+  .reviews {
+    padding-top: 80px;
+  }
+
+  .reviews__container {
+    padding: 0 20px;
+  }
+
+  .reviews__title {
+    font-size: 28px;
+  }
+
+  .reviews__arrow-default,
+  .reviews__arrow-hover {
+    width: 45px;
+    height: 45px;
+  }
+
+  .reviews__arrow {
+    width: 45px;
+    height: 45px;
+  }
+
+  .reviews__arrows {
+    gap: 20px;
+    margin-bottom: 16px;
+  }
+
+  .reviews__card {
+    padding: 16px;
+  }
+
+  .reviews__text {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  /* Footer — всё в столбик по центру */
+  .reviews__footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  /* Фото + имя + дата — по центру */
+  .reviews__person {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .reviews__meta {
+    align-items: center;
+  }
+
+  .reviews__name {
+    font-size: 14px;
+  }
+
+  .reviews__date {
+    font-size: 12px;
+  }
+
+  /* Звёзды — 20px ниже блока person */
+  .reviews__stars {
+    margin-top: 20px;
+  }
+
+  /* Кнопка — на всю ширину контейнера */
+  .reviews__google-btn {
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+  }
+
+    /* --- FAQ (смартфон) --- */
+
+  .faq {
+    padding-top: 80px;
+  }
+
+  .faq__container {
+    padding: 0 20px;
+  }
+
+  .faq__title {
+    font-size: 28px;
+  }
+
+  .faq__question {
+    padding: 16px 60px 16px 16px;
+  }
+
+  .faq__question-text {
+    font-size: 18px;
+  }
+
+  .faq__answer {
+    padding: 0 16px 16px 16px;
+  }
+
+  .faq__answer-text {
+    font-size: 16px;
+  }
+
+  .faq__divider {
+    width: 100%;
+  }
+
+/* --- CTA (смартфон) --- */
+.cta {
+  margin-top: 80px;
+  height: auto;
+  padding: 50px 0;
+}
+
+.cta__content {
+  padding: 0;
+  width: 100%;
+}
+
+.cta__title {
+  font-size: 24px;
+  max-width: 100%;
+  padding: 0 20px;
+}
+
+.cta__buttons {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.cta__split-btn {
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.cta__split-left,
+.cta__split-right {
+  border-radius: 0;
+  padding: 14px 20px;
+  justify-content: center;
+  width: 100%;
+}
+
+.cta__split-left {
+  border-radius: 10px 10px 0 0;
+}
+
+.cta__split-right {
+  border-radius: 0 0 10px 10px;
+}
+
+.cta__split-divider {
+  width: 100%;
+  height: 1px;
+}
+}

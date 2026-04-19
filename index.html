@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta -->
+  <title>Fix Garant — Ремонт холодильников на дому | Выезд сегодня</title>
+  <meta name="description" content="Выезд мастера в день обращения. Бесплатная диагностика. Оплата только после ремонта. Гарантия до 3 лет. Звоните сейчас!">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fix Garant — Ремонт холодильников на дому">
+  <meta property="og:description" content="Выезд мастера в день обращения. Бесплатная диагностика. Оплата только после ремонта. Гарантия до 3 лет.">
+  <meta property="og:image" content="Photo/Main.jpg">
+  <meta property="og:url" content="">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Fix Garant">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fix Garant — Ремонт холодильников на дому">
+  <meta name="twitter:description" content="Выезд мастера в день обращения. Бесплатная диагностика. Оплата только после ремонта.">
+  <meta name="twitter:image" content="Photo/Main.jpg">
+
+  <!-- Шрифт Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+
+  <!-- Стили -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Бургер меню (мобильная) — вне всех секций, поверх всего -->
+  <button class="burger" id="burgerBtn" aria-label="Открыть меню" aria-expanded="false">
+    <img src="Photo/Burger.svg" alt="" class="burger__open">
+    <img src="Photo/Cross.svg" alt="" class="burger__close">
+  </button>
+
+  <!-- Мобильное меню — тоже на уровне body -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu__overlay" id="menuOverlay"></div>
+    <div class="mobile-menu__content">
+      <nav class="mobile-menu__nav" aria-label="Мобильная навигация">
+        <a href="#why-us" class="mobile-menu__link">Почему мы?</a>
+        <a href="#services" class="mobile-menu__link">Услуги</a>
+        <a href="#steps" class="mobile-menu__link">Этапы работы</a>
+        <a href="#reviews" class="mobile-menu__link">Отзывы</a>
+        <a href="#faq" class="mobile-menu__link">Вопрос-ответ</a>
+      </nav>
+      <a href="tel:+79211113223" class="mobile-menu__phone">
+        <img src="Photo/Phone.svg" alt="" class="mobile-menu__phone-icon">
+        <span>+7 (921) 111 32 23</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ========== ГЛАВНЫЙ ЭКРАН ========== -->
+  <section class="hero" id="hero">
+
+    <!-- Навигация (шапка) -->
+    <header class="header">
+      <div class="header__container">
+
+        <!-- Логотип -->
+        <div class="logo">
+          <div class="logo__icons">
+            <img src="Photo/Contract.svg" alt="Fix Garant логотип" class="logo__contract">
+          </div>
+          <div class="logo__text">
+            <span class="logo__fix">Fix</span>
+            <span class="logo__garant">Garant</span>
+          </div>
+        </div>
+
+        <!-- Навигация ПК -->
+        <nav class="nav" aria-label="Основная навигация">
+          <ul class="nav__list">
+            <li><a href="#why-us" class="nav__link">Почему мы?</a></li>
+            <li><a href="#services" class="nav__link">Услуги</a></li>
+            <li><a href="#steps" class="nav__link">Этапы работы</a></li>
+            <li><a href="#reviews" class="nav__link">Отзывы</a></li>
+            <li><a href="#faq" class="nav__link">Вопрос-ответ</a></li>
+          </ul>
+        </nav>
+
+        <!-- Телефон ПК -->
+        <div class="phone-btn" id="phoneBtn" role="button" tabindex="0" aria-label="Копировать номер телефона">
+          <img src="Photo/Phone.svg" alt="" class="phone-btn__icon">
+          <img src="Photo/Phone Hover.svg" alt="" class="phone-btn__icon-hover">
+          <span class="phone-btn__number">+7 (921) 111 32 23</span>
+          <span class="phone-btn__tooltip" id="phoneTooltip">Копировать</span>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- Фон-фото главного экрана (ПК) -->
+    <div class="hero__image">
+      <img src="Photo/Main.jpg" alt="Мастер ремонтирует холодильник на дому">
+    </div>
+
+    <!-- Фон-фото главного экрана (смартфон/планшет) -->
+    <div class="hero__image-mobile">
+      <img src="Photo/Main mobile.jpg" alt="Мастер ремонтирует холодильник на дому">
+    </div>
+
+    <!-- Контент поверх фото -->
+    <div class="hero__content">
+      <div class="hero__container">
+        <h1 class="hero__title">Сломался Холодильник?<br>Починим сегодня!</h1>
+        <p class="hero__subtitle">Выезд мастера и диагностика бесплатно,<br>чек и гарантия после работы.</p>
+        <a href="#request" class="hero__btn">Оставить заявку</a>
+      </div>
+    </div>
+
+    <!-- Стрелка вниз -->
+    <a href="#why-us" class="hero__arrow" aria-label="Перейти к следующему разделу">
+      <img src="Photo/Arrow.svg" alt="">
+      <img src="Photo/Arrow Hover.svg" alt="" class="hero__arrow-hover">
+    </a>
+
+  </section>
+  <!-- ========== /ГЛАВНЫЙ ЭКРАН ========== -->
+
+
+  <!-- Блоки-заглушки для навигации (чтобы якоря работали) -->
+   
+  <!-- ========== ПОЧЕМУ МЫ ========== -->
+<section class="why-us" id="why-us">
+  <div class="why-us__container">
+    <h2 class="why-us__title">Почему стоит выбрать нас?</h2>
+    <div class="why-us__cards">
+
+      <div class="why-us__card">
+        <img src="Photo/Pros 1.svg" alt="" class="why-us__icon" style="width: 130px; height: 130px;">
+        <h3 class="why-us__card-title">Бесплатный выезд</h3>
+        <p class="why-us__card-text">Мастер приедет к вам на дом без дополнительной платы.</p>
+      </div>
+
+      <div class="why-us__card">
+        <img src="Photo/Pros 2.svg" alt="" class="why-us__icon"  style="width: 90px; height: 90px;">
+        <h3 class="why-us__card-title">Диагностика бесплатно</h3>
+        <p class="why-us__card-text">Определим поломку и назовём стоимость до начала ремонта.</p>
+      </div>
+
+      <div class="why-us__card">
+        <img src="Photo/Pros 3.svg" alt="" class="why-us__icon"  style="width: 75px; height: 75px;">
+        <h3 class="why-us__card-title">Чек и гарантия</h3>
+        <p class="why-us__card-text">Выдаём чек и гарантийный талон на все выполненные работы.</p>
+      </div>
+
+      <div class="why-us__card">
+        <img src="Photo/Pros 4.svg" alt="" class="why-us__icon"  style="width: 110px; height: 110px;">
+        <h3 class="why-us__card-title">Опытные мастера</h3>
+        <p class="why-us__card-text">Квалифицированные специалисты с опытом ремонта.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== УСЛУГИ ========== -->
+<section class="services" id="services">
+  <div class="services__container">
+    <h2 class="services__title">Что у вас случилось с холодильником?</h2>
+    <div class="services__cards">
+
+
+      <div class="services__card">
+        <img src="Photo/Hot.svg" alt="" class="services__icon"> 
+        <div class="services__info">
+          <h3 class="services__card-title">Не морозит | Сильно греется</h3>
+          <p class="services__card-text">Не держит температуру или перегревается.</p>
+          <p class="services__card-price">Стоимость: от 2 500 рублей</p>
+          <div class="services__buttons">
+            <button class="services__btn-request" id="requestBtn1">Оставить заявку</button>
+            <a href="tel:+79211113223" class="services__btn-phone services__btn-phone--call">
+              <img src="Photo/Phone.svg" alt="" class="services__btn-phone-icon">
+              <span>+7 (921) 111 32 23</span>
+            </a>
+            <div class="services__btn-phone services__btn-phone--copy" role="button" tabindex="0" data-phone="+79211113223">
+              <img src="Photo/Phone.svg" alt="" class="services__btn-phone-icon">
+              <img src="Photo/Phone Hover.svg" alt="" class="services__btn-phone-icon-hover">
+              <span>+7 (921) 111 32 23</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="services__card">
+        <img src="Photo/Sound.svg" alt="" class="services__icon">
+        <div class="services__info">
+          <h3 class="services__card-title">Шумит | Щёлкает</h3>
+          <p class="services__card-text">Посторонние звуки или вибрация при работе.</p>
+          <p class="services__card-price">Стоимость: от 2 500 рублей</p>
+          <div class="services__buttons">
+            <button class="services__btn-request" id="requestBtn2">Оставить заявку</button>
+            <a href="tel:+79211113223" class="services__btn-phone services__btn-phone--call">
+              <img src="Photo/Phone.svg" alt="" class="services__btn-phone-icon">
+              <span>+7 (921) 111 32 23</span>
+            </a>
+            <div class="services__btn-phone services__btn-phone--copy" role="button" tabindex="0" data-phone="+79211113223">
+              <img src="Photo/Phone.svg" alt="" class="services__btn-phone-icon">
+              <img src="Photo/Phone Hover.svg" alt="" class="services__btn-phone-icon-hover">
+              <span>+7 (921) 111 32 23</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="services__card">
+        <img src="Photo/Leaking.svg" alt="" class="services__icon"> 
+        <div class="services__info">
+          <h3 class="services__card-title">Протекает</h3>
+          <p class="services__card-text">Вода под холодильником или внутри камеры.</p>
+          <p class="services__card-price">Стоимость: от 2 400 рублей</p>
+          <div class="services__buttons">
+            <button class="services__btn-request" id="requestBtn3">Оставить заявку</button>
+            <a href="tel:+79211113223" class="services__btn-phone services__btn-phone--call">
+              <img src="Photo/Phone.svg" alt="" class="services__btn-phone-icon">
+              <span>+7 (921) 111 32 23</span>
+            </a>
+            <div class="services__btn-phone services__btn-phone--copy" role="button" tabindex="0" data-phone="+79211113223">
+              <img src="Photo/Phone.svg" alt="" class="services__btn-phone-icon">
+              <img src="Photo/Phone Hover.svg" alt="" class="services__btn-phone-icon-hover">
+              <span>+7 (921) 111 32 23</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="services__card">
+        <img src="Photo/Overcold.svg" alt="" class="services__icon"> 
+        <div class="services__info">
+          <h3 class="services__card-title">Перемораживает | Намораживает лёд</h3>
+          <p class="services__card-text">Наледь на стенках или продукты замерзают.</p>
+          <p class="services__card-price">Стоимость: от 2 000 рублей</p>
+          <div class="services__buttons">
+            <button class="services__btn-request" id="requestBtn4">Оставить заявку</button>
+            <a href="tel:+79211113223" class="services__btn-phone services__btn-phone--call">
+              <img src="Photo/Phone.svg" alt="" class="services__btn-phone-icon">
+              <span>+7 (921) 111 32 23</span>
+            </a>
+            <div class="services__btn-phone services__btn-phone--copy" role="button" tabindex="0" data-phone="+79211113223">
+              <img src="Photo/Phone.svg" alt="" class="services__btn-phone-icon">
+              <img src="Photo/Phone Hover.svg" alt="" class="services__btn-phone-icon-hover">
+              <span>+7 (921) 111 32 23</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="services__card">
+        <img src="Photo/OnOff Problems.svg" alt="" class="services__icon">
+        <div class="services__info">
+          <h3 class="services__card-title">Не включается | Не отключается</h3>
+          <p class="services__card-text">Не реагирует на включение и выключение.</p>
+          <p class="services__card-price">Стоимость: от 2 500 рублей</p>
+          <div class="services__buttons">
+            <button class="services__btn-request" id="requestBtn5">Оставить заявку</button>
+            <a href="tel:+79211113223" class="services__btn-phone services__btn-phone--call">
+              <img src="Photo/Phone.svg" alt="" class="services__btn-phone-icon">
+              <span>+7 (921) 111 32 23</span>
+            </a>
+            <div class="services__btn-phone services__btn-phone--copy" role="button" tabindex="0" data-phone="+79211113223">
+              <img src="Photo/Phone.svg" alt="" class="services__btn-phone-icon">
+              <img src="Photo/Phone Hover.svg" alt="" class="services__btn-phone-icon-hover">
+              <span>+7 (921) 111 32 23</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="services__card">
+        <img src="Photo/Error.svg" alt="" class="services__icon">  
+        <div class="services__info">
+          <h3 class="services__card-title">Ошибка на экране</h3>
+          <p class="services__card-text">Ошибка или мигание индикатора на дисплее.</p>
+          <p class="services__card-price">Стоимость: от 2 500 рублей</p>
+          <div class="services__buttons">
+            <button class="services__btn-request" id="requestBtn6">Оставить заявку</button>
+            <a href="tel:+79211113223" class="services__btn-phone services__btn-phone--call">
+              <img src="Photo/Phone.svg" alt="" class="services__btn-phone-icon">
+              <span>+7 (921) 111 32 23</span>
+            </a>
+            <div class="services__btn-phone services__btn-phone--copy" role="button" tabindex="0" data-phone="+79211113223">
+              <img src="Photo/Phone.svg" alt="" class="services__btn-phone-icon">
+              <img src="Photo/Phone Hover.svg" alt="" class="services__btn-phone-icon-hover">
+              <span>+7 (921) 111 32 23</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== ЭТАПЫ РАБОТЫ ========== -->
+<section class="steps" id="steps">
+  <div class="steps__container">
+    <h2 class="steps__title">Как мы работаем</h2>
+    <div class="steps__cards">
+
+      <div class="steps__card">
+        <img src="Photo/Calling.jpg" alt="Вы звоните или оставляете заявку" class="steps__img">
+        <p class="steps__text">Вы звоните или оставляете заявку и мы обсуждаем ваш случай</p>
+      </div>
+
+      <div class="steps__card">
+        <img src="Photo/Driving.jpg" alt="Мастер выезжает к вам" class="steps__img">
+        <p class="steps__text">Наш мастер выезжает к вам на дом в удобное для вас время</p>
+      </div>
+
+      <div class="steps__card">
+        <img src="Photo/Done.jpg" alt="Холодильник отремонтирован" class="steps__img">
+        <p class="steps__text">Вы принимаете работу, мы даём вам чек и гарантийный талон до 3-х лет</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== ОТЗЫВЫ ========== -->
+<section class="reviews" id="reviews">
+  <div class="reviews__container">
+    <h2 class="reviews__title">Что думают о нас клиенты</h2>
+
+    <div class="reviews__track-wrap">
+
+      <!-- Стрелки сверху справа -->
+      <div class="reviews__arrows">
+        <button class="reviews__arrow reviews__arrow--left" id="reviewPrev" aria-label="Предыдущий отзыв">
+          <img src="Photo/Arrow left.svg" alt="Назад" class="reviews__arrow-default">
+          <img src="Photo/Arrow left hover.svg" alt="Назад" class="reviews__arrow-hover">
+        </button>
+        <button class="reviews__arrow reviews__arrow--right" id="reviewNext" aria-label="Следующий отзыв">
+          <img src="Photo/Arrow right.svg" alt="Вперёд" class="reviews__arrow-default">
+          <img src="Photo/Arrow right hover.svg" alt="Вперёд" class="reviews__arrow-hover">
+        </button>
+      </div>
+
+      <!-- Карточки -->
+      <div class="reviews__track" id="reviewsTrack">
+
+        <!-- Карточка 1 -->
+        <div class="reviews__card">
+          <p class="reviews__text">Очень доволен работой мастера — приехал в тот же день, всё починил быстро и аккуратно. Холодильник снова работает как новый!</p>
+          <div class="reviews__footer">
+            <div class="reviews__person">
+              <img src="Photo/Review1.svg" alt="Алексей К." class="reviews__avatar">
+              <div class="reviews__meta">
+                <span class="reviews__name">Алексей К.</span>
+                <span class="reviews__date">12 марта 2025</span>
+              </div>
+            </div>
+            <img src="Photo/Stars.svg" alt="5 звёзд" class="reviews__stars">
+          </div>
+        </div>
+
+        <!-- Карточка 2 -->
+        <div class="reviews__card">
+          <p class="reviews__text">Обратилась с проблемой — мастер сразу нашёл причину и устранил её прямо при мне. Приятно, что объяснил что именно сломалось.</p>
+          <div class="reviews__footer">
+            <div class="reviews__person">
+              <img src="Photo/Review2.svg" alt="Марина С." class="reviews__avatar">
+              <div class="reviews__meta">
+                <span class="reviews__name">Марина С.</span>
+                <span class="reviews__date">5 апреля 2025</span>
+              </div>
+            </div>
+            <img src="Photo/Stars.svg" alt="5 звёзд" class="reviews__stars">
+          </div>
+        </div>
+
+        <!-- Карточка 3 -->
+        <div class="reviews__card">
+          <p class="reviews__text">Холодильник дома очень сильно начал шуметь ночью — вызвал мастера, уже через час всё было тихо. Отличный сервис, рекомендую!</p>
+          <div class="reviews__footer">
+            <div class="reviews__person">
+              <img src="Photo/Review3.svg" alt="Дмитрий В." class="reviews__avatar">
+              <div class="reviews__meta">
+                <span class="reviews__name">Дмитрий В.</span>
+                <span class="reviews__date">18 апреля 2025</span>
+              </div>
+            </div>
+            <img src="Photo/Stars.svg" alt="5 звёзд" class="reviews__stars">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Кнопка Google Maps -->
+    <a href="https://www.dns-shop.ru/" target="_blank" rel="noopener noreferrer" class="reviews__google-btn">
+      Читать отзывы на Google Картах
+    </a>
+
+    
+  </div>
+</section>
+
+
+  <!-- ========== ВОПРОС-ОТВЕТ ========== -->
+<section class="faq" id="faq">
+  <div class="faq__container">
+    <h2 class="faq__title">Вопросы, которые нам чаще всего задают</h2>
+
+    <div class="faq__list">
+
+      <!-- Вопрос 1 -->
+      <div class="faq__item">
+        <div class="faq__question">
+          <span class="faq__question-text">Сколько стоит выезд мастера?</span>
+          <img src="Photo/FAQ arrow.svg" alt="" class="faq__arrow">
+        </div>
+        <div class="faq__answer">
+          <div class="faq__divider"></div>
+          <p class="faq__answer-text">Выезд мастера бесплатный. Вы платите только за выполненную работу и запчасти — и только после того, как ремонт завершён и вы убедились в результате.</p>
+        </div>
+      </div>
+
+      <!-- Вопрос 2 -->
+      <div class="faq__item">
+        <div class="faq__question">
+          <span class="faq__question-text">Как быстро приедет мастер?</span>
+          <img src="Photo/FAQ arrow.svg" alt="" class="faq__arrow">
+        </div>
+        <div class="faq__answer">
+          <div class="faq__divider"></div>
+          <p class="faq__answer-text">В большинстве случаев мастер приезжает в день обращения. Вы сами выбираете удобное время — утро, день или вечер. Минимальное время ожидания — 1–2 часа после звонка.</p>
+        </div>
+      </div>
+
+      <!-- Вопрос 3 -->
+      <div class="faq__item">
+        <div class="faq__question">
+          <span class="faq__question-text">Даёте ли вы гарантию на ремонт?</span>
+          <img src="Photo/FAQ arrow.svg" alt="" class="faq__arrow">
+        </div>
+        <div class="faq__answer">
+          <div class="faq__divider"></div>
+          <p class="faq__answer-text">Да, на все виды работ предоставляется гарантия до 3 лет. После ремонта вы получаете гарантийный талон с печатью. Если в гарантийный период возникнет та же неисправность — устраним бесплатно.</p>
+        </div>
+      </div>
+
+      <!-- Вопрос 4 -->
+      <div class="faq__item">
+        <div class="faq__question">
+          <span class="faq__question-text">Нужно ли везти холодильник к вам?</span>
+          <img src="Photo/FAQ arrow.svg" alt="" class="faq__arrow">
+        </div>
+        <div class="faq__answer">
+          <div class="faq__divider"></div>
+          <p class="faq__answer-text">Нет. Мы работаем исключительно на выезд — ремонтируем прямо у вас дома. Везти холодильник никуда не нужно: мастер приедет с необходимыми инструментами и запчастями.</p>
+        </div>
+      </div>
+
+      <!-- Вопрос 5 -->
+      <div class="faq__item">
+        <div class="faq__question">
+          <span class="faq__question-text">Что если холодильник не удастся починить?</span>
+          <img src="Photo/FAQ arrow.svg" alt="" class="faq__arrow">
+        </div>
+        <div class="faq__answer">
+          <div class="faq__divider"></div>
+          <p class="faq__answer-text">Если ремонт технически невозможен или нецелесообразен — мы честно скажем об этом. Диагностика в таком случае остаётся бесплатной. Вы не платите ничего.</p>
+        </div>
+      </div>
+
+      <!-- Вопрос 6 -->
+      <div class="faq__item">
+        <div class="faq__question">
+          <span class="faq__question-text">Какие марки вы ремонтируете?</span>
+          <img src="Photo/FAQ arrow.svg" alt="" class="faq__arrow">
+        </div>
+        <div class="faq__answer">
+          <div class="faq__divider"></div>
+          <p class="faq__answer-text">Ремонтируем холодильники всех популярных марок: Samsung, LG, Indesit, Bosch, Atlant, Hotpoint, Haier, Whirlpool, Nord и других. Если вашей марки нет в списке — уточните по телефону, скорее всего мы с ней работаем.</p>
+        </div>
+      </div>
+
+      <!-- Вопрос 7 -->
+      <div class="faq__item">
+        <div class="faq__question">
+          <span class="faq__question-text">Как и когда оплачивать ремонт?</span>
+          <img src="Photo/FAQ arrow.svg" alt="" class="faq__arrow">
+        </div>
+        <div class="faq__answer">
+          <div class="faq__divider"></div>
+          <p class="faq__answer-text">Оплата производится только после завершения ремонта и вашей проверки результата. Принимаем наличные и перевод на карту. Никаких предоплат и скрытых платежей.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ========== CTA ========== -->
+<section class="cta" id="cta">
+  <div class="cta__image">
+    <img src="Photo/CTA.jpg" alt="">
+  </div>
+
+  <div class="cta__content">
+    <h2 class="cta__title">Остались вопросы?<br>Будем рады ответить!</h2>
+
+    <div class="cta__buttons">
+      <div class="cta__split-btn" id="ctaSplitBtn">
+
+        <div class="cta__split-left" id="ctaLeftHalf">
+          <span>Оставить заявку</span>
+        </div>
+
+        <div class="cta__split-divider"></div>
+
+        <div class="cta__split-right" id="ctaRightHalf">
+          <img src="Photo/Phone Hover.svg" alt="" class="cta__phone-icon">
+          <span>+7 (921) 111 32 23</span>
+          <span class="cta__tooltip" id="ctaPhoneTooltip">Копировать</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <section id="request" style="min-height: 100px;"></section>
+
+  <!-- Скрипт -->
+  <script>
+    // === Бургер меню ===
+    var burgerBtn = document.getElementById('burgerBtn');
+    var mobileMenu = document.getElementById('mobileMenu');
+    var menuOverlay = document.getElementById('menuOverlay');
+
+    function openMenu() {
+      mobileMenu.classList.add('active');
+      burgerBtn.classList.add('active');
+      burgerBtn.setAttribute('aria-expanded', 'true');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.remove('active');
+      burgerBtn.classList.remove('active');
+      burgerBtn.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    burgerBtn.addEventListener('click', function() {
+      if (mobileMenu.classList.contains('active')) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    menuOverlay.addEventListener('click', closeMenu);
+
+    document.querySelectorAll('.mobile-menu__link').forEach(function(link) {
+      link.addEventListener('click', closeMenu);
+    });
+
+// === Копирование номера телефона (ПК) / звонок (мобильные) ===
+var phoneBtn = document.getElementById('phoneBtn');
+var phoneTooltip = document.getElementById('phoneTooltip');
+var phoneNumber = '+79211113223';
+var tooltipTimer = null;
+
+function isTouchDevice() {
+  return window.matchMedia('(hover: none)').matches;
+}
+
+phoneBtn.addEventListener('mouseenter', function() {
+  if (tooltipTimer || isTouchDevice()) return;
+  phoneTooltip.textContent = 'Копировать';
+  phoneTooltip.classList.remove('copied');
+  phoneTooltip.classList.add('visible');
+});
+
+phoneBtn.addEventListener('mouseleave', function() {
+  if (tooltipTimer) return;
+  phoneTooltip.classList.remove('visible', 'copied');
+});
+
+phoneBtn.addEventListener('click', function() {
+  if (isTouchDevice()) {
+    window.location.href = 'tel:+79211113223';
+    return;
+  }
+  if (tooltipTimer) clearTimeout(tooltipTimer);
+  function doCopy() {
+    phoneTooltip.textContent = 'Скопировано!';
+    phoneTooltip.classList.add('visible', 'copied');
+    tooltipTimer = setTimeout(function() {
+      phoneTooltip.classList.remove('visible', 'copied');
+      tooltipTimer = null;
+    }, 1000);
+  }
+  navigator.clipboard.writeText(phoneNumber).then(doCopy).catch(function() {
+    var temp = document.createElement('input');
+    document.body.appendChild(temp);
+    temp.value = phoneNumber;
+    temp.select();
+    document.execCommand('copy');
+    document.body.removeChild(temp);
+    doCopy();
+  });
+});
+
+phoneBtn.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    phoneBtn.click();
+  }
+});
+
+// === Копирование телефона в карточках услуг (ПК) / звонок (мобильные) ===
+document.querySelectorAll('.services__btn-phone--copy').forEach(function(btn) {
+  var tip = document.createElement('span');
+  tip.className = 'phone-btn__tooltip';
+  tip.textContent = 'Копировать';
+  btn.style.position = 'relative';
+  btn.appendChild(tip);
+
+  var tipTimer = null;
+
+  btn.addEventListener('mouseenter', function() {
+    if (tipTimer || window.matchMedia('(hover: none)').matches) return;
+    tip.textContent = 'Копировать';
+    tip.classList.remove('copied');
+    tip.classList.add('visible');
+  });
+
+  btn.addEventListener('mouseleave', function() {
+    if (tipTimer) return;
+    tip.classList.remove('visible', 'copied');
+  });
+
+  btn.addEventListener('click', function() {
+    var phone = btn.getAttribute('data-phone');
+
+    if (window.matchMedia('(hover: none)').matches) {
+      window.location.href = 'tel:' + phone;
+      return;
+    }
+
+    if (tipTimer) clearTimeout(tipTimer);
+    function done() {
+      tip.textContent = 'Скопировано!';
+      tip.classList.add('visible', 'copied');
+      tipTimer = setTimeout(function() {
+        tip.classList.remove('visible', 'copied');
+        tipTimer = null;
+      }, 1000);
+    }
+    navigator.clipboard.writeText(phone).then(done).catch(function() {
+      var temp = document.createElement('input');
+      document.body.appendChild(temp);
+      temp.value = phone;
+      temp.select();
+      document.execCommand('copy');
+      document.body.removeChild(temp);
+      done();
+    });
+  });
+});
+
+// === Плавная прокрутка ===
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+  anchor.addEventListener('click', function(e) {
+    var targetId = this.getAttribute('href');
+    if (targetId === '#') return;
+    var target = document.querySelector(targetId);
+    if (target) {
+      e.preventDefault();
+      var offsets = {
+        '#why-us': 140,
+        '#services': -80,
+        '#steps': -80,
+        '#reviews': -80,
+        '#faq': -80
+      };
+      var offset = offsets[targetId] !== undefined ? offsets[targetId] : 80;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }
+  });
+});
+
+// === Слайдер отзывов ===
+var reviewCards = document.querySelectorAll('.reviews__card');
+var currentReview = 0;
+
+// Фиксируем высоту трека по самой высокой карточке
+function fixTrackHeight() {
+  var track = document.getElementById('reviewsTrack');
+  track.style.minHeight = '';          // сбрасываем перед замером
+  var maxH = 0;
+  reviewCards.forEach(function(card) {
+    card.style.display = 'flex';       // временно показываем все
+    var h = card.offsetHeight;
+    if (h > maxH) maxH = h;
+    card.style.display = '';           // сбрасываем инлайн-стиль
+  });
+  track.style.minHeight = maxH + 'px'; // фиксируем
+}
+
+function showReview(index) {
+  reviewCards.forEach(function(card) { card.classList.remove('active'); });
+  reviewCards[index].classList.add('active');
+}
+
+// Запускаем после загрузки шрифтов и картинок
+window.addEventListener('load', function() {
+  fixTrackHeight();
+  showReview(0);
+});
+
+// Пересчитываем при изменении размера окна (например, поворот телефона)
+window.addEventListener('resize', fixTrackHeight);
+
+document.getElementById('reviewPrev').addEventListener('click', function() {
+  currentReview = (currentReview - 1 + reviewCards.length) % reviewCards.length;
+  showReview(currentReview);
+});
+
+document.getElementById('reviewNext').addEventListener('click', function() {
+  currentReview = (currentReview + 1) % reviewCards.length;
+  showReview(currentReview);
+});
+
+// === FAQ аккордеон ===
+document.querySelectorAll('.faq__question').forEach(function(question) {
+  question.addEventListener('click', function() {
+    var item = this.closest('.faq__item');
+    var isActive = item.classList.contains('active');
+
+    // Закрываем все
+    document.querySelectorAll('.faq__item').forEach(function(el) {
+      el.classList.remove('active');
+    });
+
+    // Открываем текущий если был закрыт
+    if (!isActive) {
+      item.classList.add('active');
+    }
+  });
+});
+
+// === CTA Split Button ===
+var ctaSplitBtn = document.getElementById('ctaSplitBtn');
+var ctaLeftHalf = document.getElementById('ctaLeftHalf');
+var ctaRightHalf = document.getElementById('ctaRightHalf');
+var ctaTooltip = document.getElementById('ctaPhoneTooltip');
+var ctaPhone = '+79211113223';
+var ctaTimer = null;
+
+ctaLeftHalf.addEventListener('mouseenter', function () {
+  ctaSplitBtn.classList.remove('hover-right');
+  ctaSplitBtn.classList.add('hover-left');
+});
+
+ctaRightHalf.addEventListener('mouseenter', function () {
+  ctaSplitBtn.classList.remove('hover-left');
+  ctaSplitBtn.classList.add('hover-right');
+  if (!ctaTimer) {
+    ctaTooltip.textContent = 'Копировать';
+    ctaTooltip.classList.add('visible');
+  }
+});
+
+ctaRightHalf.addEventListener('mouseleave', function () {
+  if (!ctaTimer) {
+    ctaTooltip.classList.remove('visible');
+  }
+});
+
+ctaLeftHalf.addEventListener('click', function () {
+  // openModal();
+});
+
+ctaRightHalf.addEventListener('click', function () {
+  if (window.matchMedia('(hover: none)').matches) {
+    window.location.href = 'tel:' + ctaPhone;
+    return;
+  }
+  if (ctaTimer) clearTimeout(ctaTimer);
+
+  function onCopied() {
+  ctaTooltip.textContent = 'Скопировано!';
+  ctaTooltip.classList.add('visible', 'copied'); // ← добавь copied
+  ctaTimer = setTimeout(function () {
+    ctaTooltip.classList.remove('visible', 'copied'); // ← и здесь
+    ctaTimer = null;
+  }, 1500);
+}
+
+  function fallbackCopy() {
+    var tmp = document.createElement('textarea');
+    tmp.value = ctaPhone;
+    tmp.setAttribute('readonly', '');
+    tmp.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none;';
+    document.body.appendChild(tmp);
+    tmp.focus();
+    tmp.select();
+    tmp.setSelectionRange(0, 99999);
+    document.execCommand('copy');
+    document.body.removeChild(tmp);
+    onCopied();
+  }
+
+  if (navigator.clipboard && location.protocol === 'https:') {
+    navigator.clipboard.writeText(ctaPhone).then(onCopied).catch(fallbackCopy);
+  } else {
+    fallbackCopy();
+  }
+});
+
+</script>
+</body>
+</html>
