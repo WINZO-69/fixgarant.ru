@@ -13,8 +13,8 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Fix Garant — Ремонт холодильников на дому">
   <meta property="og:description" content="Выезд мастера в день обращения. Бесплатная диагностика. Оплата только после ремонта. Гарантия до 3 лет.">
-  <meta property="og:image" content="Photo/Main.jpg">
-  <meta property="og:url" content="">
+  <meta property="og:image" content="https://fixgarant.ru/Photo/Main.jpg">
+  <meta property="og:url" content="https://fixgarant.ru/">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:site_name" content="Fix Garant">
 
@@ -640,6 +640,8 @@
   </div>
 </footer>
 
+<script src="https://lk.newapi.ru/stat/52244/js"></script>
+
   <!-- Скрипт -->
   <script>
     // === Бургер меню ===
@@ -892,10 +894,6 @@ ctaRightHalf.addEventListener('mouseleave', function () {
   }
 });
 
-ctaLeftHalf.addEventListener('click', function () {
-  // openModal();
-});
-
 ctaRightHalf.addEventListener('click', function () {
   if (window.matchMedia('(hover: none)').matches) {
     window.location.href = 'tel:' + ctaPhone;
@@ -1043,8 +1041,10 @@ for (var i = 0; i < slForms.length; i++) {
       }
     }
 
-    oData.append('view_id', window.view_id);
-    oData.append('hash', window.view_id);
+if (window.view_id) {
+  oData.append('view_id', window.view_id);
+  oData.append('hash', window.view_id);
+}
 
     var XHR = ('onload' in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
     var xhr = new XHR();
