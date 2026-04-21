@@ -1060,14 +1060,14 @@ button {
   display: block;
 }
 
-/* Разделитель */
 .faq__divider {
   width: 600px;
   max-width: 100%;
   height: 1px;
-  background: #158AFF;
-  margin-bottom: 20px;
+  background: none;
+  border-top: 1px solid #158AFF;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .faq__answer-text {
@@ -1276,6 +1276,363 @@ button {
 
 .cta__tooltip.visible {
   opacity: 1;
+}
+
+/* Ховер на синей левой половине */
+.cta__split-left:hover {
+  background: #0d6fcc;
+}
+
+/* Если левая уже синяя через класс — тоже затемняем */
+.cta__split-btn.hover-left .cta__split-left:hover {
+  background: #0d6fcc;
+}
+
+/* Ховер на синей правой половине */
+.cta__split-btn.hover-right .cta__split-right:hover {
+  background: #0d6fcc;
+}
+
+/* ========== ФУТЕР ========== */
+
+.footer {
+  background-color: #F2F2F2;
+  margin-top: 0;
+}
+
+.footer__container {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 0 40px 20px;
+}
+
+/* Навигация футера */
+.footer__nav {
+  padding-top: 80px;
+}
+
+.footer__nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.footer__nav-link {
+  font-size: 18px;
+  font-weight: 400;
+  color: #000000;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.footer__nav-link:hover {
+  color: #158AFF;
+}
+
+/* Логотип футера */
+.footer__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.footer__logo-icons {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.footer__logo-contract {
+  width: 40px;
+  height: 48px;
+}
+
+.footer__logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.footer__logo-fix,
+.footer__logo-garant {
+  font-size: 18px;
+  font-weight: 600;
+  color: #158AFF;
+  display: block;
+}
+
+/* Разделительная линия */
+.footer__divider {
+  width: 100%;
+  height: 1px;
+  background-color: #000000;
+  margin-top: 30px;
+}
+
+/* Политика конфиденциальности */
+.footer__privacy {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.footer__privacy-link {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  color: #000000;
+  letter-spacing: 0.03em;
+  transition: color 0.2s ease;
+}
+
+.footer__privacy-link:hover {
+  color: #158AFF;
+}
+
+/* ========== ПОПАП ФОРМА ========== */
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal {
+  background-color: #ffffff;
+  border: 1px solid #AAAAAA;
+  border-radius: 16px;
+  padding: 48px 40px 40px;
+  width: 100%;
+  max-width: 560px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal__close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #AAAAAA;
+  font-size: 20px;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s ease;
+  padding: 4px;
+}
+
+.modal__close:hover {
+  color: #000000;
+}
+
+.modal__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #000000;
+  text-align: center;
+  line-height: 1.4;
+  letter-spacing: 0.03em;
+  margin-bottom: 32px;
+}
+
+.modal__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.modal__field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal__input {
+  width: 100%;
+  padding: 14px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+  background-color: #ffffff;
+  border: 1px solid #AAAAAA;
+  border-radius: 8px;
+  outline: none;
+  letter-spacing: 0.03em;
+  transition: border-color 0.2s ease;
+  caret-color: #158AFF;
+}
+
+.modal__input::placeholder {
+  color: #AAAAAA;
+}
+
+.modal__input:focus {
+  border-color: #158AFF;
+}
+
+.modal__input.error {
+  border-color: #ff4444;
+}
+
+.modal__error {
+  display: none;
+  margin-top: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #ff4444;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.modal__error.visible {
+  display: block;
+}
+
+/* Чекбокс */
+.modal__checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  width: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  margin-top: 4px;
+}
+
+.modal__checkbox {
+  display: none;
+}
+
+.modal__checkbox-box {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  border: 1px solid #AAAAAA;
+  border-radius: 4px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.modal__checkbox:checked + .modal__checkbox-box {
+  background-color: #158AFF;
+  border-color: #158AFF;
+}
+
+.modal__checkbox:checked + .modal__checkbox-box::after {
+  content: '';
+  display: block;
+  width: 5px;
+  height: 9px;
+  border: 2px solid #ffffff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.modal__checkbox-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #555555;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+}
+
+.modal__checkbox-link {
+  color: #158AFF;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.modal__checkbox-link:hover {
+  color: #0d6fcc;
+}
+
+.modal__consent-error {
+  display: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #ff4444;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-top: -8px;
+}
+
+.modal__consent-error.visible {
+  display: block;
+}
+
+.modal__submit {
+  width: 100%;
+  padding: 14px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  background-color: #158AFF;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 4px;
+}
+
+.modal__submit:hover {
+  background-color: #0d6fcc;
+}
+
+.modal__submit:disabled {
+  background-color: rgba(21, 138, 255, 0.4);
+  cursor: not-allowed;
+}
+
+/* Адаптив */
+@media (max-width: 576px) {
+  .modal {
+    padding: 40px 20px 32px;
+  }
+  .modal__title {
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+  .modal__input {
+    font-size: 16px;
+    padding: 12px 16px;
+  }
+  .modal__submit {
+    font-size: 16px;
+    padding: 13px 16px;
+  }
 }
 
 /* =============================================
@@ -1599,6 +1956,35 @@ button {
   width: 100%;
   max-width: 500px;
 }
+
+  /* --- ФУТЕР (планшет) --- */
+
+  .footer__container {
+    padding: 0 20px 20px;
+  }
+
+  .footer__nav {
+    padding-top: 60px;
+  }
+
+  .footer__nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 24px;
+  }
+
+  .footer__nav-link {
+    font-size: 16px;
+  }
+
+  .footer__logo {
+    margin-top: 24px;
+    gap: 15px;
+  }
+
+  .footer__divider {
+    margin-top: 24px;
+  }
 }
 
 
@@ -1990,4 +2376,47 @@ button {
   width: 100%;
   height: 1px;
 }
+
+  /* --- ФУТЕР (смартфон) --- */
+
+  .footer__container {
+    padding: 0 20px 20px;
+  }
+
+  .footer__nav {
+    padding-top: 40px;
+  }
+
+  .footer__nav-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .footer__nav-link {
+    font-size: 16px;
+  }
+
+  .footer__logo {
+    margin-top: 24px;
+    gap: 15px;
+  }
+
+  .footer__logo-contract {
+    width: 32px;
+    height: 38px;
+  }
+
+  .footer__logo-fix,
+  .footer__logo-garant {
+    font-size: 15px;
+  }
+
+  .footer__divider {
+    margin-top: 24px;
+  }
+
+  .footer__privacy-link {
+    font-size: 14px;
+  }
 }
