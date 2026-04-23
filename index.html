@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Фавиконы -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon_svg.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
   <!-- SEO Meta -->
   <title>Fix Garant — Ремонт холодильников на дому | Выезд сегодня</title>
   <meta name="description" content="Выезд мастера в день обращения. Бесплатная диагностика. Оплата только после ремонта. Гарантия до 3 лет. Звоните сейчас!">
@@ -32,6 +38,21 @@
 
   <!-- Стили -->
   <link rel="stylesheet" href="style.css">
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=108723709', 'ym');
+
+    ym(108723709, 'init', {ssr:true, webvisor:true, clickmap:true, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/108723709" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
 </head>
 <body>
 
@@ -580,7 +601,7 @@
         <input type="checkbox" class="modal__checkbox" id="modalConsent">
         <span class="modal__checkbox-box"></span>
         <span class="modal__checkbox-text">Я согласен на обработку персональных данных и принимаю условия
-          <a href="https://www.dns-shop.ru/" target="_blank" class="modal__checkbox-link">Политики конфиденциальности</a>
+          <a href="privacy.html" target="_blank" class="modal__checkbox-link">Политики конфиденциальности</a>
         </span>
       </label>
       <span class="modal__consent-error" id="consentError">Необходимо согласие с Политикой конфиденциальности</span>
@@ -634,7 +655,7 @@
 
     <!-- Политика конфиденциальности -->
     <p class="footer__privacy">
-      <a href="https://www.dns-shop.ru/" target="_blank" rel="noopener noreferrer" class="footer__privacy-link">Политика конфиденциальности</a>
+      <a href="privacy.html" target="_blank" rel="noopener noreferrer" class="footer__privacy-link">Политика конфиденциальности</a>
     </p>
 
   </div>
@@ -1046,24 +1067,31 @@ if (window.view_id) {
   oData.append('hash', window.view_id);
 }
 
-    var XHR = ('onload' in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
-    var xhr = new XHR();
-    xhr.open('POST', form.action, true);
-    xhr.onload = function() {
-      if (xhr.status === 200) {
-        form.reset();
-        submitBtn.textContent = 'Заявка отправлена!';
-        setTimeout(function() {
-          closeModal();
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Отправить заявку';
-        }, 1500);
-      } else {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Отправить заявку';
-        alert('Ошибка ' + xhr.status + '. Попробуйте ещё раз.');
-      }
-    };
+var XHR = ('onload' in new XMLHttpRequest()) ? XMLHttpRequest : XDomainRequest;
+var xhr = new XHR();
+xhr.open('POST', form.action, true);
+xhr.onload = function() {
+  if (xhr.status === 200) {
+
+    // ✅ Конверсия — только после реального успеха
+    if (typeof ym === 'function') {
+      ym(108723709, 'reachGoal', 'form_sent');
+    }
+
+    form.reset();
+    submitBtn.textContent = 'Заявка отправлена!';
+    setTimeout(function() {
+      closeModal();
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Отправить заявку';
+    }, 1500);
+
+  } else {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Отправить заявку';
+    alert('Ошибка ' + xhr.status + '. Попробуйте ещё раз.');
+  }
+};
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.send(urlencodeFormData(oData));
   }, false);
