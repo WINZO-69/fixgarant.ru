@@ -408,9 +408,9 @@ button {
 }
 
 .hero__title {
-  font-family: 'Russo One', sans-serif; 
-  font-size: 60px;
-  font-weight: 400;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 65px;
+  font-weight: 800;
   color: #16599C;
   line-height: 1.15;
   max-width: 700px;
@@ -1690,8 +1690,8 @@ button {
   }
 
   .hero__title {
-    font-size: 34px;
-    font-weight: 400;
+    font-size: 40px;
+    font-weight: 800;
     color: #ffffff;
     max-width: 100%;
     letter-spacing: 0.10em;
@@ -2030,8 +2030,8 @@ button {
   }
 
   .hero__title {
-    font-size: 22px;
-    font-weight: 400;
+    font-size: 30px;
+    font-weight: 800;
     color: #ffffff;
     letter-spacing: 0.10em;
   }
