@@ -541,10 +541,12 @@ button {
   transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
 }
 
-.why-us__card:hover {
-  transform: translateY(-10px);
-  background-color: rgba(21, 138, 255, 0.1);
-  border-color: #158AFF;
+@media (hover: hover) {
+  .why-us__card:hover {
+    transform: translateY(-10px);
+    background-color: rgba(21, 138, 255, 0.1);
+    border-color: #158AFF;
+  }
 }
 
 
@@ -613,9 +615,11 @@ button {
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-.services__card:hover {
-  background-color: rgba(21, 138, 255, 0.1);
-  border-color: #158AFF;
+@media (hover: hover) {
+  .services__card:hover {
+    background-color: rgba(21, 138, 255, 0.1);
+    border-color: #158AFF;
+  }
 }
 
 .services__icon {
@@ -868,12 +872,14 @@ button {
   display: none;
 }
 
-.reviews__arrow:hover .reviews__arrow-default {
-  display: none;
-}
+@media (hover: hover) {
+  .reviews__arrow:hover .reviews__arrow-default {
+    display: none;
+  }
 
-.reviews__arrow:hover .reviews__arrow-hover {
-  display: block;
+  .reviews__arrow:hover .reviews__arrow-hover {
+    display: block;
+  }
 }
 
 /* Трек */
@@ -1847,6 +1853,22 @@ button {
     display: none;
   }
 
+  /* Убираем hover-эффект на кнопке телефона */
+.services__btn-phone:hover {
+  background-color: transparent;
+  color: #000000;
+}
+.services__btn-phone:hover .services__btn-phone-icon {
+  display: block;
+}
+.services__btn-phone:hover .services__btn-phone-icon-hover {
+  display: none;
+}
+.services__btn-phone:active {
+  background-color: rgba(21, 138, 255, 0.1);
+}
+
+
     /* --- ЭТАПЫ РАБОТЫ (планшет) --- */
 
   .steps {
@@ -2181,6 +2203,22 @@ button {
   .services__btn-phone--copy {
     display: none;
   }
+
+  /* Убираем hover-эффект на кнопке телефона */
+.services__btn-phone:hover {
+  background-color: transparent;
+  color: #000000;
+}
+.services__btn-phone:hover .services__btn-phone-icon {
+  display: block;
+}
+.services__btn-phone:hover .services__btn-phone-icon-hover {
+  display: none;
+}
+.services__btn-phone:active {
+  background-color: rgba(21, 138, 255, 0.1);
+}
+
 
     /* --- ЭТАПЫ РАБОТЫ (смартфон) --- */
 
