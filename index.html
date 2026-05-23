@@ -1,251 +1,1655 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Торговые новости</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.min.js"></script>
-  <script src="https://d3js.org/d3.v7.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fix Garant — Ремонт холодильников на дому | Выезд сегодня по России</title>
+<meta name="description" content="Ремонт холодильников на дому. Выезд мастера в день обращения. Бесплатная диагностика. Гарантия до 3 лет. Работаем по всей России.">
+<meta name="robots" content="index, follow">
+<meta name="yandex-verification" content="f2040229cfe852c5">
+<meta property="og:title" content="Fix Garant — Ремонт холодильников">
+<meta property="og:description" content="Выезд мастера в день обращения. Диагностика бесплатно. Гарантия до 3 лет.">
+<meta property="og:url" content="https://fixgarant.ru/">
+<meta property="og:image" content="https://fixgarant.ru/Photo/Cold.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://lk.newapi.ru">
+<link rel="preconnect" href="https://newapi.ru">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap"></noscript>
+<link rel="canonical" href="https://fixgarant.ru/">
 
-  <!-- ═══════════════════════════════════════════════════════
-       ВСТРОЕННЫЕ SVG-ИКОНКИ (скрытые шаблоны)
-       Используются через JS: element.innerHTML = svgIcon('bear') и т.д.
-  ════════════════════════════════════════════════════════════ -->
-  <svg style="display:none;" xmlns="http://www.w3.org/2000/svg">
+<!-- Фавиконы -->
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon_svg.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
-    <!-- ARROW -->
-    <symbol id="icon-arrow" viewBox="0 0 35 19">
-      <path d="M17.1876 18.7501C16.788 18.7501 16.388 18.5974 16.0829 18.2923L0.45791 2.66728C-0.152637 2.05674 -0.152637 1.06807 0.45791 0.45791C1.06846 -0.152246 2.05713 -0.152637 2.66728 0.45791L17.1876 14.9782L31.7079 0.45791C32.3185 -0.152637 33.3071 -0.152637 33.9173 0.45791C34.5274 1.06846 34.5278 2.05713 33.9173 2.66728L18.2923 18.2923C17.9872 18.5974 17.5872 18.7501 17.1876 18.7501Z" fill="white"/>
-    </symbol>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Fix Garant — Ремонт холодильников",
+  "telephone": "+79697773690",
+  "url": "https://fixgarant.ru",
+  "image": "https://fixgarant.ru/Photo/Cold.png",
+  "description": "Ремонт холодильников на дому. Выезд мастера в день обращения, бесплатная диагностика, гарантия до 3 лет.",
+  "areaServed": ["Кострома","Вологда","Мурманск","Сургут","Астрахань","Кемерово","Новокузнецк","Томск","Ставрополь"],
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "08:00",
+    "closes": "22:00"
+  },
+  "priceRange": "от 1000 ₽"
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+:root{
+  --accent:#00D4FF;
+  --accent2:#0099CC;
+  --green:#22FF88;
+  --white:#FFFFFF;
+  --dark:#080C14;
+  --dark2:#0D1420;
+  --dark3:#121C2E;
+  --glass:rgba(255,255,255,0.06);
+  --glass-border:rgba(255,255,255,0.12);
+  --muted:rgba(255,255,255,0.5);
+  --text:rgba(255,255,255,0.85);
+  --nav-h:68px;
+}
+body{
+  font-family:'Manrope',sans-serif;
+  background:var(--dark);
+  color:var(--white);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  max-width:100vw;
+}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{cursor:pointer;background:none;border:none;font:inherit;color:inherit}
+img{display:block;max-width:100%}
 
-    <!-- BEAR (жёлтый) -->
-    <symbol id="icon-bear" viewBox="0 0 50 51">
-      <path d="M27.4502 0.345051C29.4718 0.634141 31.4669 1.08703 33.415 1.69954L35.9785 2.50521C34.8812 3.28927 34.4118 5.17121 34.4111 5.3304C47.8271 -7.15556 54.261 7.21397 46.9268 13.8538C46.853 13.9206 46.8122 14.0194 46.8203 14.1185L46.9639 15.8441L45.792 14.2249C45.2246 13.4412 44.4257 12.8543 43.5078 12.5482C53.5461 25.2579 46.4887 34.2025 44.1406 35.7728C48.03 28.1155 42.9379 22.853 39.9053 21.179C48.6898 35.4589 32.684 47.3856 29.3955 47.6995C45.7089 36.1501 39.8991 28.3978 35.1973 26.3577C43.0047 36.6653 29.0535 44.9525 25.0576 50.9095C25.0405 50.9351 25.0019 50.9214 25.001 50.8909C25.0001 50.9213 24.9635 50.935 24.9463 50.9095C20.9506 44.9525 6.99517 36.6654 14.8027 26.3577C10.1009 28.3978 4.29102 36.1501 20.6045 47.6995C17.3162 47.3858 1.31018 35.459 10.0947 21.179C7.06206 22.853 1.96999 28.1155 5.85938 35.7728C3.51134 34.2026 -3.54618 25.2579 6.49219 12.5482C5.57438 12.8543 4.77536 13.4412 4.20801 14.2249L3.03613 15.8441L3.17969 14.1185C3.18778 14.0194 3.14695 13.9206 3.07324 13.8538C-4.26109 7.21398 2.17284 -7.15564 15.5889 5.3304C15.5882 5.17122 15.1196 3.28934 14.0225 2.50521L16.584 1.70052C18.533 1.08775 20.5292 0.6341 22.5518 0.345051L24.9668 0.000324249C24.9847 -0.00204338 24.9995 0.0110205 25.001 0.0286446C25.0025 0.0108647 25.0191 -0.00225317 25.0371 0.000324249L27.4502 0.345051ZM22.1797 29.8109C20.6199 29.8111 19.3555 31.0752 19.3555 32.6351C19.3555 34.195 20.6199 35.4591 22.1797 35.4593H27.8252C29.385 35.4591 30.6494 34.195 30.6494 32.6351C30.6494 31.0752 29.385 29.8111 27.8252 29.8109H22.1797ZM40.8477 17.6429C39.1221 17.1722 32.9307 19.0554 31.1221 21.2523C29.3974 23.3473 29.8499 22.8417 29.4219 23.4163C29.4096 23.4328 29.4156 23.4574 29.4346 23.4652L32.0391 24.5384C32.053 24.5442 32.0689 24.5394 32.0771 24.5267C33.2414 22.7388 36.7229 18.8933 40.8477 17.6429ZM19.042 21.18C17.2335 18.9831 11.0419 17.0999 9.31641 17.5706C13.4412 18.8211 16.9228 22.6666 18.0869 24.4544C18.0952 24.4669 18.1111 24.4709 18.125 24.4652L20.7295 23.3919C20.7485 23.3841 20.7544 23.3596 20.7422 23.3431C20.3144 22.7689 20.7662 23.2745 19.042 21.18Z" fill="#FFEF03"/>
-    </symbol>
+/* NAV */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 60px;height:var(--nav-h);
+  /* needed for centered menu */
+  background:rgba(8,12,20,0.55);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(255,255,255,0.07);
+  transition:background .3s;
+}
+.nav.solid{background:rgba(8,12,20,0.97)}
+.nav__logo{
+  font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.08em;
+  color:var(--white);display:flex;align-items:center;gap:4px;flex-shrink:0;
+}
+.nav__logo-dot{color:var(--accent)}
+.nav__menu{display:flex;gap:32px;align-items:center;position:absolute;left:50%;transform:translateX(-50%)}
+.nav__link{font-size:13px;font-weight:500;color:var(--muted);transition:color .2s;letter-spacing:.02em;white-space:nowrap}
+.nav__link:hover{color:var(--white)}
+.nav__actions{display:flex;align-items:center;gap:60px}
+.nav__tel{
+  font-size:13px;font-weight:700;color:var(--white);letter-spacing:.02em;
+  opacity:.9;transition:color .25s,opacity .25s;position:relative;white-space:nowrap;
+}
+.nav__tel:hover{opacity:1;color:var(--accent)}
+.nav__tel::after{
+  content:'';position:absolute;left:0;right:0;bottom:-3px;height:1px;
+  background:var(--accent);transform:scaleX(0);transform-origin:left;
+  transition:transform .3s cubic-bezier(0.4,0,0.2,1);
+  will-change:transform;
+}
+.nav__tel:hover::after{transform:scaleX(1)}
+.nav__tel__tooltip{position:absolute;bottom:-36px;left:50%;transform:translateX(-50%);background:#222;color:#fff;font-size:12px;font-weight:600;padding:5px 12px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
+.nav__tel__tooltip.copied{background:var(--accent);color:var(--dark)}
+.nav__tel__tooltip.visible{opacity:1}
+.nav__cta{
+  padding:9px 22px;
+  background:var(--accent);color:var(--dark);
+  font-size:13px;font-weight:700;border-radius:100px;
+  transition:all .2s;border:none;cursor:pointer;font-family:'Manrope',sans-serif;
+  white-space:nowrap;flex-shrink:0;
+}
+.nav__cta:hover{background:#33DDFF;transform:translateY(-1px)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.burger-bar{display:block;width:22px;height:1.5px;background:var(--white);transition:all .3s;border-radius:2px}
+.burger.open .burger-bar:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger.open .burger-bar:nth-child(2){opacity:0}
+.burger.open .burger-bar:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 
-    <!-- BEAR-GREY -->
-    <symbol id="icon-bear-grey" viewBox="0 0 50 51">
-      <path d="M27.4503 0.34505C29.472 0.634144 31.467 1.08799 33.4152 1.70052L35.9777 2.50618C34.8801 3.29088 34.4114 5.17306 34.4113 5.3304C47.8275 -7.15582 54.2618 7.21511 46.9269 13.8548C46.8531 13.9216 46.8122 14.0202 46.8204 14.1195L46.964 15.8441L45.7921 14.2249C45.2248 13.4412 44.4257 12.8553 43.5079 12.5492C53.5465 25.2595 46.4884 34.2043 44.1408 35.7738C48.0307 28.1164 42.9382 22.8542 39.9054 21.18C48.6893 35.4598 32.6839 47.3858 29.3956 47.6995C45.7093 36.15 39.8992 28.3978 35.1974 26.3577C43.0051 36.6655 29.0532 44.9535 25.0577 50.9105C25.0405 50.9359 25.0017 50.9215 25.0011 50.8909C25.0005 50.9214 24.9638 50.9354 24.9464 50.9105C20.9509 44.9535 6.99423 36.6655 14.8019 26.3577C10.1001 28.398 4.2913 36.1502 20.6046 47.6995C17.3164 47.3858 1.31091 35.4598 10.0949 21.18C7.06207 22.8541 1.96954 28.1163 5.8595 35.7738C3.51194 34.2044 -3.54633 25.2596 6.49232 12.5492C5.57452 12.8553 4.77546 13.4412 4.20814 14.2249L3.03626 15.8441L3.17982 14.1195C3.18808 14.0203 3.14714 13.9216 3.07337 13.8548C-4.26159 7.21511 2.17273 -7.15587 15.589 5.3304C15.5889 5.17303 15.1195 3.29069 14.0216 2.50618L16.5831 1.70052C18.5322 1.08771 20.5283 0.634125 22.5509 0.34505L24.9669 0.000323761C24.9851 -0.00208624 25.0001 0.0114929 25.0011 0.0296206C25.0021 0.0113481 25.0189 -0.00230036 25.0372 0.000323761L27.4503 0.34505ZM22.1798 29.8109C20.62 29.8111 19.3556 31.0752 19.3556 32.6351C19.3556 34.195 20.62 35.4591 22.1798 35.4593H27.8253C29.3852 35.4591 30.6495 34.195 30.6495 32.6351C30.6495 31.0752 29.3852 29.8111 27.8253 29.8109H22.1798ZM40.8478 17.6429C39.1223 17.1722 32.9308 19.0554 31.1222 21.2523C29.3975 23.3473 29.8501 22.8417 29.422 23.4163C29.4097 23.4328 29.4157 23.4574 29.4347 23.4652L32.0392 24.5384C32.0532 24.5442 32.069 24.5394 32.0773 24.5267C33.2415 22.7388 36.723 18.8933 40.8478 17.6429ZM19.0421 21.18C17.2336 18.9831 11.042 17.0999 9.31654 17.5706C13.4414 18.8211 16.9229 22.6666 18.087 24.4544C18.0953 24.4669 18.1113 24.4709 18.1251 24.4652L20.7296 23.3919C20.7486 23.3841 20.7546 23.3595 20.7423 23.3431C20.3146 22.7689 20.7663 23.2745 19.0421 21.18Z" fill="#A9A9A9"/>
-    </symbol>
+/* MOBILE MENU */
+.mob-menu{
+  display:none;position:fixed;inset:0;z-index:899;
+  background:rgba(8,12,20,0.98);backdrop-filter:blur(20px);
+  flex-direction:column;align-items:center;justify-content:center;gap:36px;
+}
+.mob-menu.open{display:flex}
+.mob-menu__link{font-family:'Bebas Neue',sans-serif;font-size:42px;letter-spacing:.06em;color:var(--muted);transition:color .2s}
+.mob-menu__link:hover{color:var(--white)}
+.mob-menu__tel{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:16px 36px;background:var(--accent);border-radius:100px;
+  font-size:18px;font-weight:700;color:var(--dark);margin-top:8px;font-family:'Manrope',sans-serif;
+}
 
-    <!-- BULL (жёлтый) -->
-    <symbol id="icon-bull" viewBox="0 0 71 51">
-      <path d="M42.8804 47.9952L35.1297 50.9345C35.0463 50.9661 34.957 50.9045 34.957 50.8153V19.125L34.968 19.1218C36.1782 18.7658 38.9997 17.9359 40.6945 16.919C42.8195 15.644 44.0945 14.1565 51.7445 14.1565C59.3945 14.1565 60.2448 8.419 61.307 4.8065C62.3693 1.194 67.4695 -0.506009 70.0195 0.131498C63.857 1.8315 64.0698 6.0815 64.4948 10.969C64.8828 15.4315 61.9445 19.637 60.2448 20.5315C56.207 22.6565 53.8695 21.8065 50.6823 22.444C48.1046 22.9596 45.3695 25.415 43.6698 27.965C48.132 25.84 56.3358 26.4159 58.0361 27.2659C45.4493 29.064 40.0067 31.6544 39.0163 37.5095C38.627 39.8108 39.4811 42.1005 40.6017 44.1479C41.0774 37.5692 49.6466 32.1598 55.2396 32.8589C46.9111 37.7172 43.2284 45.1506 42.9449 47.913C42.9409 47.9512 42.9163 47.9816 42.8804 47.9952Z" fill="#FFEF03"/>
-      <path d="M27.1391 47.9952L34.8898 50.9345C34.9732 50.9661 35.0625 50.9045 35.0625 50.8153V19.125L35.0516 19.1218C33.8414 18.7658 31.0199 17.9359 29.325 16.919C27.2 15.644 25.925 14.1565 18.275 14.1565C10.625 14.1565 9.77474 8.419 8.7125 4.8065C7.65026 1.194 2.55 -0.506009 0 0.131498C6.1625 1.8315 5.94974 6.0815 5.52474 10.969C5.1367 15.4315 8.075 19.637 9.77474 20.5315C13.8125 22.6565 16.15 21.8065 19.3372 22.444C21.9149 22.9596 24.65 25.415 26.3497 27.965C21.8875 25.84 13.6837 26.4159 11.9834 27.2659C24.5702 29.064 30.0128 31.6544 31.0032 37.5095C31.3925 39.8108 30.5385 42.1005 29.4179 44.1479C28.9421 37.5692 20.3729 32.1598 14.7799 32.8589C23.1085 37.7172 26.7911 45.1506 27.0747 47.913C27.0786 47.9512 27.1032 47.9816 27.1391 47.9952Z" fill="#FFEF03"/>
-    </symbol>
+/* HERO — 100dvh, content spaced from nav top and 30px from bottom */
+.hero{
+  position:relative;width:100%;
+  padding-top:var(--nav-h);
+  display:flex;flex-direction:column;
+  overflow:hidden;
+}
+.hero__bg{
+  position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 120% 80% at 60% 30%,rgba(0,100,160,0.55) 0%,transparent 65%),
+    radial-gradient(ellipse 60% 50% at 20% 80%,rgba(0,50,100,0.4) 0%,transparent 60%),
+    linear-gradient(160deg,#050B18 0%,#0A1828 40%,#081420 100%);
+}
+.hero__grid{
+  position:absolute;inset:0;z-index:0;
+  background-image:
+    linear-gradient(rgba(0,212,255,0.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,212,255,0.04) 1px,transparent 1px);
+  background-size:80px 80px;
+  animation:gridMove 20s linear infinite;
+}
+@keyframes gridMove{from{transform:translate(0,0)}to{transform:translate(80px,80px)}}
+.hero__grid{
+  /* добавить к существующим стилям: */
+  will-change: transform;
+  transform: translateZ(0);
+}
+.hero__overlay{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to top,rgba(8,12,20,1) 0%,rgba(8,12,20,0.3) 50%,rgba(8,12,20,0.1) 100%);
+}
 
-    <!-- BULL-GREY -->
-    <symbol id="icon-bull-grey" viewBox="0 0 71 51">
-      <path d="M42.8804 47.9952L35.1297 50.9345C35.0463 50.9661 34.957 50.9045 34.957 50.8153V19.125L34.968 19.1218C36.1782 18.7658 38.9997 17.9359 40.6945 16.919C42.8195 15.644 44.0945 14.1565 51.7445 14.1565C59.3945 14.1565 60.2448 8.419 61.307 4.8065C62.3693 1.194 67.4695 -0.506009 70.0195 0.131498C63.857 1.8315 64.0698 6.0815 64.4948 10.969C64.8828 15.4315 61.9445 19.637 60.2448 20.5315C56.207 22.6565 53.8695 21.8065 50.6823 22.444C48.1046 22.9596 45.3695 25.415 43.6698 27.965C48.132 25.84 56.3358 26.4159 58.0361 27.2659C45.4493 29.064 40.0067 31.6544 39.0163 37.5095C38.627 39.8108 39.4811 42.1005 40.6017 44.1479C41.0774 37.5692 49.6466 32.1598 55.2396 32.8589C46.9111 37.7172 43.2284 45.1506 42.9449 47.913C42.9409 47.9512 42.9163 47.9816 42.8804 47.9952Z" fill="#A9A9A9"/>
-      <path d="M27.1391 47.9952L34.8898 50.9345C34.9732 50.9661 35.0625 50.9045 35.0625 50.8153V19.125L35.0516 19.1218C33.8414 18.7658 31.0199 17.9359 29.325 16.919C27.2 15.644 25.925 14.1565 18.275 14.1565C10.625 14.1565 9.77474 8.419 8.7125 4.8065C7.65026 1.194 2.55 -0.506009 0 0.131498C6.1625 1.8315 5.94974 6.0815 5.52474 10.969C5.1367 15.4315 8.075 19.637 9.77474 20.5315C13.8125 22.6565 16.15 21.8065 19.3372 22.444C21.9149 22.9596 24.65 25.415 26.3497 27.965C21.8875 25.84 13.6837 26.4159 11.9834 27.2659C24.5702 29.064 30.0128 31.6544 31.0032 37.5095C31.3925 39.8108 30.5385 42.1005 29.4179 44.1479C28.9421 37.5692 20.3729 32.1598 14.7799 32.8589C23.1085 37.7172 26.7911 45.1506 27.0747 47.913C27.0786 47.9512 27.1032 47.9816 27.1391 47.9952Z" fill="#A9A9A9"/>
-    </symbol>
+/* pills row — 30px below nav */
+.hero__topbar{
+  position:relative;z-index:10;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 60px 0;
+  flex-shrink:0;
+}
+.hero__pill{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 18px;border:1px solid rgba(255,255,255,0.15);
+  border-radius:100px;font-size:12px;font-weight:600;
+  color:rgba(255,255,255,0.7);letter-spacing:.06em;
+  backdrop-filter:blur(10px);background:rgba(0,0,0,0.2);
+  white-space:nowrap;
+}
+.hero__pill-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:blink 2s infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(0.7)}}
 
-  </svg>
+/* main content — fills remaining space, 30px padding at bottom */
+.hero__content{
+  position:relative;z-index:5;
+  display:grid;grid-template-columns:1fr 460px;
+  gap:40px;align-items:end;
+  padding:28px 60px 56px;
+}
+.hero__title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(48px,6.5vw,108px);
+  line-height:.95;letter-spacing:.02em;
+  color:var(--white);
+}
+.hero__title-accent{
+  color:transparent;
+  -webkit-text-stroke:1.5px var(--accent);
+  display:block;
+}
+.hero__sub{
+  font-size:15px;color:var(--muted);line-height:1.65;
+  max-width:520px;margin-top:14px;
+}
+.hero__sub strong{color:var(--white);font-weight:600}
+.hero__btns{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.btn-hero{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:15px 28px;border-radius:100px;
+  font-size:15px;font-weight:700;font-family:'Manrope',sans-serif;
+  transition:all .25s;cursor:pointer;white-space:nowrap;
+}
+.btn-hero-primary{background:var(--accent);color:var(--dark);border:none}
+.btn-hero-primary:hover{background:#33DDFF;transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,212,255,0.35)}
+.btn-hero-outline{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.25);min-width:245px}
+.btn-hero-outline:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.5)}
 
+.hero__stats{
+  display:flex;gap:0;margin-top:28px;
+  border:1px solid var(--glass-border);border-radius:16px;
+  overflow:hidden;backdrop-filter:blur(16px);
+  background:rgba(255,255,255,0.04); width:560px;
+}
+.hero__stat{
+  padding:14px 20px;
+  border-right:1px solid var(--glass-border);
+}
+.hero__stat:last-child{border-right:none}
+.hero__stat-num{
+  font-family:'Bebas Neue',sans-serif;font-size:28px;
+  color:var(--white);line-height:1;letter-spacing:.02em;
+}
+.hero__stat-num span{color:var(--accent);font-size:20px}
+.hero__stat-label{font-size:11px;color:var(--muted);margin-top:4px;letter-spacing:.04em;text-transform:uppercase}
+
+/* hero form card */
+.hero__form-card{
+  background:rgba(13,20,32,0.75);
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  border:1px solid var(--glass-border);
+  border-radius:20px;padding:22px 20px;
+  position:relative;overflow:hidden;
+  align-self:flex-end;
+}
+.hero__form-card::before{
+  content:'';position:absolute;top:-60px;right:-60px;
+  width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,212,255,0.12),transparent 70%);
+  pointer-events:none;
+}
+.hfc__badge{
+  display:inline-flex;align-items:center;gap:6px;margin-bottom:14px;
+  padding:5px 12px;background:rgba(34,255,136,0.1);
+  border:1px solid rgba(34,255,136,0.25);border-radius:100px;
+  font-size:11px;font-weight:700;color:var(--green);letter-spacing:.06em;text-transform:uppercase;
+}
+.hfc__title{font-size:17px;font-weight:800;color:var(--white);line-height:1.2;margin-bottom:4px}
+.hfc__sub{font-size:12px;color:var(--muted);margin-bottom:16px;line-height:1.5}
+.hfc__pros{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
+.hfc__pro{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:500;color:rgba(255,255,255,0.7)}
+.hfc__pro-check{width:16px;height:16px;border-radius:50%;background:rgba(0,212,255,0.2);border:1px solid rgba(0,212,255,0.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:9px;color:var(--accent);font-weight:700}
+.f-input{
+  width:100%;padding:12px 16px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:10px;
+  font-family:'Manrope',sans-serif;font-size:14px;color:var(--white);
+  outline:none;transition:border-color .2s;caret-color:var(--accent);
+  margin-bottom:8px;
+}
+.f-input::placeholder{color:rgba(255,255,255,0.3)}
+.f-input:focus{border-color:var(--accent)}
+.f-input.err{border-color:#FF4D4D}
+.f-err{display:none;font-size:11px;color:#FF6B6B;margin:-6px 0 8px 2px}
+.f-err.show{display:block}
+.f-cb-row{display:flex;align-items:flex-start;gap:8px;margin:4px 0 14px}
+.f-cb{display:none}
+.f-cb-box{
+  width:16px;height:16px;min-width:16px;
+  border:1px solid rgba(255,255,255,0.2);border-radius:4px;
+  background:transparent;display:flex;align-items:center;justify-content:center;
+  margin-top:1px;cursor:pointer;transition:all .2s;
+}
+.f-cb:checked+.f-cb-box{background:var(--accent);border-color:var(--accent)}
+.f-cb:checked+.f-cb-box::after{content:'✓';color:var(--dark);font-size:10px;font-weight:700}
+.f-cb-text{font-size:11px;color:rgba(255,255,255,0.4);line-height:1.6}
+.f-cb-link{color:var(--accent);opacity:.8}
+.f-consent-err{display:none;font-size:11px;color:#FF6B6B;margin:-10px 0 10px}
+.f-consent-err.show{display:block}
+.f-submit{
+  width:100%;padding:14px;
+  background:var(--accent);color:var(--dark);
+  border:none;border-radius:10px;
+  font-family:'Manrope',sans-serif;font-size:15px;font-weight:800;
+  cursor:pointer;transition:all .2s;
+}
+.f-submit:hover:not(:disabled){background:#33DDFF;transform:translateY(-1px)}
+.f-submit:disabled{opacity:.5;cursor:not-allowed}
+.hfc__lock{text-align:center;font-size:10px;color:rgba(255,255,255,0.3);margin-top:10px}
+
+/* TICKER */
+.ticker{
+  background:var(--accent);padding:12px 0;overflow:hidden;
+  transform:translateZ(0);
+  border-top:1px solid rgba(255,255,255,0.1);
+  position:relative;z-index:10;
+}
+.ticker__track{
+  display:flex;gap:0;white-space:nowrap;
+  will-change:transform;
+  backface-visibility:hidden;
+}
+.ticker__item{
+  display:inline-flex;align-items:center;gap:12px;
+  padding:0 40px;font-size:13px;font-weight:700;
+  color:var(--dark);letter-spacing:.04em;
+}
+.ticker__sep{width:4px;height:4px;border-radius:50%;background:rgba(8,12,20,0.4);flex-shrink:0}
+
+/* SECTION BASE */
+.section{padding:110px 0}
+.wrap{max-width:1320px;margin:0 auto;padding:0 60px;width:100%}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:20px;
+}
+.eyebrow::before{content:'';width:24px;height:1px;background:var(--accent)}
+.sec-title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(40px,5vw,72px);line-height:.95;letter-spacing:.02em;
+  color:var(--white);margin-bottom:16px;
+}
+.sec-sub{font-size:16px;color:var(--muted);line-height:1.8;max-width:540px}
+
+/* PROBLEMS — aligned heights */
+.problems{background:var(--dark2);padding:0}
+.problems__split{
+  display:grid;
+  grid-template-columns:420px 1fr;
+}
+.problems__left{
+  background:var(--dark3);
+  padding:60px 40px;
+  display:flex;flex-direction:column;justify-content:center;
+  border-right:1px solid var(--glass-border);
+  position:relative;
+}
+.problems__left::after{
+  content:'';position:absolute;bottom:-100px;left:-100px;
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,212,255,0.08),transparent 70%);pointer-events:none;
+}
+.problems__left .sec-title{font-size:clamp(32px,3.5vw,56px);margin-bottom:12px}
+.problems__lsub{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:28px;max-width:260px}
+.problems__right{
+  display:flex;flex-direction:column;
+}
+.prob-row{
+  display:flex;align-items:center;gap:20px;
+  padding:24px 36px;border-bottom:1px solid var(--glass-border);
+  cursor:pointer;transition:all .25s;position:relative;overflow:hidden;
+  flex:1;
+}
+.prob-row::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:var(--accent);transform:scaleY(0);transform-origin:center;transition:transform .25s;
+}
+.prob-row:hover::before{transform:scaleY(1)}
+.prob-row:hover{background:rgba(0,212,255,0.04);padding-left:44px}
+.prob-row:last-child{border-bottom:none}
+.prob-row__num{
+  font-family:'Bebas Neue',sans-serif;font-size:18px;color:rgba(255,255,255,0.2);
+  min-width:28px;letter-spacing:.04em;flex-shrink:0;
+}
+.prob-row__icon{
+  font-size:22px;flex-shrink:0;
+  width:46px;height:46px;border-radius:12px;
+  background:rgba(255,255,255,0.05);border:1px solid var(--glass-border);
+  display:flex;align-items:center;justify-content:center;
+  transition:all .25s;
+}
+.prob-row:hover .prob-row__icon{background:rgba(0,212,255,0.1);border-color:rgba(0,212,255,0.3)}
+.prob-row__body{flex:1;min-width:0}
+.prob-row__title{font-size:15px;font-weight:700;color:var(--white);margin-bottom:3px}
+.prob-row__desc{font-size:12px;color:var(--muted);line-height:1.5}
+.prob-row__badge{
+  padding:4px 12px;background:rgba(0,212,255,0.1);
+  border:1px solid rgba(0,212,255,0.2);border-radius:100px;
+  font-size:11px;font-weight:700;color:var(--accent);white-space:nowrap;flex-shrink:0;
+}
+.prob-row__arrow{font-size:18px;color:var(--muted);transition:all .25s;margin-left:6px;flex-shrink:0}
+.prob-row:hover .prob-row__arrow{color:var(--accent);transform:translateX(4px)}
+
+/* WHY — BENTO */
+.why{background:var(--dark)}
+.bento{
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:16px;margin-top:64px;
+}
+.bento-card{
+  background:var(--dark3);
+  border:1px solid var(--glass-border);
+  border-radius:20px;padding:32px;
+  transition:border-color .3s,transform .3s;
+  position:relative;overflow:hidden;
+}
+.bento-card:hover{border-color:rgba(0,212,255,0.35);transform:translateY(-4px)}
+.bento-card::after{
+  content:'';position:absolute;inset:0;border-radius:20px;
+  background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(0,212,255,0.06),transparent 60%);
+  opacity:0;transition:opacity .3s;pointer-events:none;
+}
+.bento-card:hover::after{opacity:1}
+.bc1{grid-column:span 7}
+.bc2{grid-column:span 5}
+.bc3{grid-column:span 4}
+.bc4{grid-column:span 4}
+/* bc5 — full width at bottom, no gap */
+.bc5{grid-column:span 4}
+.bc6{
+  grid-column:span 12;
+  background:linear-gradient(135deg,#0A1628 0%,#081828 100%);
+  border-color:rgba(0,212,255,0.2);
+}
+.bento-card__big{
+  font-family:'Bebas Neue',sans-serif;font-size:80px;line-height:1;
+  color:var(--accent);letter-spacing:.02em;margin-bottom:-8px;
+}
+.bento-card__unit{font-size:18px;color:rgba(0,212,255,0.6);margin-left:4px;font-family:'Manrope',sans-serif;font-weight:400}
+.bento-card__title{font-size:18px;font-weight:800;color:var(--white);margin-bottom:8px}
+.bento-card__text{font-size:13px;color:var(--muted);line-height:1.7}
+.bento-card__icon{font-size:32px;margin-bottom:16px}
+.bento-card__tag{
+  display:inline-flex;margin-top:16px;padding:5px 14px;
+  background:rgba(34,255,136,0.1);border:1px solid rgba(34,255,136,0.25);
+  border-radius:100px;font-size:11px;font-weight:700;color:var(--green);
+}
+.bc6-inner{display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.bc6-left{flex:1;min-width:260px}
+.bc6-right{display:flex;gap:24px;flex-wrap:wrap}
+.bc6-stat{text-align:center;padding:20px 28px;background:rgba(255,255,255,0.04);border:1px solid var(--glass-border);border-radius:14px}
+.bc6-stat__num{font-family:'Bebas Neue',sans-serif;font-size:48px;color:var(--white);line-height:1}
+.bc6-stat__label{font-size:11px;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:.06em}
+
+/* HOW */
+.how{background:var(--dark2);padding:110px 0}
+.how__steps{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;margin-top:72px;
+  border:1px solid var(--glass-border);border-radius:20px;overflow:hidden;
+}
+.how-step{
+  padding:40px 32px;border-right:1px solid var(--glass-border);
+  transition:background .3s;
+}
+.how-step:last-child{border-right:none}
+.how-step:hover{background:rgba(0,212,255,0.04)}
+.how-step__num{
+  font-family:'Bebas Neue',sans-serif;font-size:72px;line-height:1;
+  color:rgba(255,255,255,0.06);margin-bottom:8px;letter-spacing:.02em;
+}
+.how-step__icon{font-size:28px;margin-bottom:16px}
+.how-step__title{font-size:17px;font-weight:800;color:var(--white);margin-bottom:10px}
+.how-step__text{font-size:13px;color:var(--muted);line-height:1.7}
+.how-step__time{
+  display:inline-flex;margin-top:16px;padding:5px 14px;
+  background:rgba(255,255,255,0.05);border:1px solid var(--glass-border);
+  border-radius:100px;font-size:11px;font-weight:600;color:rgba(255,255,255,0.5);
+}
+
+/* BRANDS */
+.brands{background:var(--dark);padding:60px 0;border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border)}
+.brands__label{text-align:center;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:32px}
+.brands__list{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.brand-tag{
+  padding:10px 20px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--glass-border);border-radius:100px;
+  font-size:13px;font-weight:600;color:rgba(255,255,255,0.45);
+  transition:all .2s;cursor:default;
+}
+.brand-tag:hover{color:var(--white);border-color:rgba(0,212,255,0.35);background:rgba(0,212,255,0.06)}
+
+/* GUARANTEES */
+.guar{background:var(--dark2);padding:110px 0;position:relative;overflow:hidden}
+.guar::before{
+  content:'';position:absolute;top:-200px;right:-200px;
+  width:700px;height:700px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,212,255,0.07),transparent 70%);pointer-events:none;
+}
+.guar__layout{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:64px;border:1px solid var(--glass-border);border-radius:20px;overflow:hidden}
+.guar-card{
+  padding:48px;border-right:1px solid var(--glass-border);
+  border-bottom:1px solid var(--glass-border);
+  transition:background .3s;
+}
+.guar-card:nth-child(2){border-right:none}
+.guar-card:nth-child(3){border-bottom:none}
+.guar-card:nth-child(4){border-right:none;border-bottom:none}
+.guar-card:hover{background:rgba(0,212,255,0.03)}
+.guar-card__icon{font-size:40px;margin-bottom:20px}
+.guar-card__title{font-size:22px;font-weight:800;color:var(--white);margin-bottom:12px;line-height:1.2}
+.guar-card__text{font-size:14px;color:var(--muted);line-height:1.8}
+.guar-card__pill{
+  display:inline-flex;margin-top:20px;padding:6px 16px;
+  background:rgba(0,212,255,0.1);border:1px solid rgba(0,212,255,0.2);
+  border-radius:100px;font-size:12px;font-weight:700;color:var(--accent);
+}
+
+/* CALCULATOR */
+.calc{background:var(--dark);padding:110px 0}
+.calc__inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:64px}
+.calc__form{background:var(--dark3);border:1px solid var(--glass-border);border-radius:20px;padding:40px;position:relative;overflow:hidden}
+.calc__form::before{content:'';position:absolute;top:-80px;left:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(0,212,255,0.06),transparent 70%);pointer-events:none}
+.calc__label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.calc__select{
+  width:100%;padding:14px 16px;
+  background:rgba(255,255,255,0.05);border:1px solid var(--glass-border);
+  border-radius:10px;font-family:'Manrope',sans-serif;font-size:14px;color:var(--white);
+  outline:none;cursor:pointer;margin-bottom:24px;
+  appearance:none;-webkit-appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.4)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;
+}
+.calc__select option{background:var(--dark2);color:var(--white)}
+.calc__result{
+  padding:28px;border-radius:14px;
+  background:linear-gradient(135deg,rgba(0,212,255,0.08),rgba(0,212,255,0.02));
+  border:1px solid rgba(0,212,255,0.2);
+  display:none;
+}
+.calc__result.show{display:block}
+.calc__result-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.calc__result-price{font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--white);line-height:1;letter-spacing:.02em}
+.calc__result-price span{color:var(--accent)}
+.calc__result-note{font-size:12px;color:var(--muted);margin-top:8px}
+.calc__right h3{font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:.95;letter-spacing:.02em;color:var(--white);margin-bottom:16px}
+.calc__right p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:28px}
+.calc__checks{display:flex;flex-direction:column;gap:12px;margin-bottom:36px}
+.calc__check{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--text)}
+.calc__check-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.btn-calc{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 32px;background:var(--accent);color:var(--dark);
+  border:none;border-radius:100px;font-family:'Manrope',sans-serif;
+  font-size:15px;font-weight:800;cursor:pointer;transition:all .2s;
+}
+.btn-calc:hover{background:#33DDFF;transform:translateY(-2px)}
+
+/* REVIEWS */
+.reviews{background:var(--dark2);padding:110px 0}
+.reviews__top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;gap:24px;flex-wrap:wrap}
+.ya-link{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border:1px solid var(--glass-border);border-radius:100px;
+  font-size:13px;font-weight:600;color:var(--muted);transition:all .2s;
+}
+.ya-link:hover{border-color:var(--accent);color:var(--accent)}
+.reviews__grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.rev-card{
+  background:var(--dark3);border:1px solid var(--glass-border);
+  border-radius:20px;padding:32px;transition:all .25s;
+}
+.rev-card:hover{border-color:rgba(0,212,255,0.3);transform:translateY(-3px)}
+.rev-stars{color:#FFB800;font-size:14px;letter-spacing:3px;margin-bottom:16px}
+.rev-text{font-size:15px;line-height:1.8;color:var(--text);margin-bottom:24px}
+.rev-foot{display:flex;align-items:center;justify-content:space-between;padding-top:20px;border-top:1px solid var(--glass-border)}
+.rev-person{display:flex;align-items:center;gap:12px}
+.rev-ava{
+  width:40px;height:40px;border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:800;color:var(--dark);flex-shrink:0;
+}
+.rev-name{font-size:14px;font-weight:700;color:var(--white)}
+.rev-date{font-size:11px;color:var(--muted);margin-top:2px}
+.rev-src{font-size:11px;color:var(--muted)}
+/* future review card */
+.rev-card--future{
+  grid-column:span 2;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,0.02);
+  border:1px dashed rgba(255,255,255,0.15);
+  border-radius:20px;
+  min-height:120px;
+  transition:all .25s;
+}
+.rev-card--future:hover{border-color:rgba(0,212,255,0.3);background:rgba(0,212,255,0.03)}
+.rev-card--future__inner{text-align:center}
+.rev-card--future__text{font-size:18px;font-weight:700;color:rgba(255,255,255,0.3);margin-bottom:6px}
+.rev-card--future__emoji{font-size:28px}
+
+/* FAQ */
+.faq{background:var(--dark);padding:110px 0}
+.faq__layout{display:grid;grid-template-columns:1fr 2fr;gap:80px;margin-top:64px;align-items:start}
+.faq__left p{font-size:15px;color:var(--muted);line-height:1.8;margin:16px 0 32px}
+.btn-faq{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 28px;background:var(--accent);color:var(--dark);
+  border:none;border-radius:100px;font-family:'Manrope',sans-serif;
+  font-size:14px;font-weight:800;cursor:pointer;transition:all .2s;
+}
+.btn-faq:hover{background:#33DDFF}
+.faq__list{display:flex;flex-direction:column;gap:0}
+.faq-item{border-bottom:1px solid var(--glass-border)}
+.faq-item:first-child{border-top:1px solid var(--glass-border)}
+.faq-q{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px 0;cursor:pointer;gap:16px;
+}
+.faq-q-text{font-size:16px;font-weight:700;color:var(--white);line-height:1.4}
+.faq-q-ico{
+  width:28px;height:28px;min-width:28px;border-radius:50%;
+  border:1px solid var(--glass-border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;color:var(--muted);transition:all .3s;
+}
+.faq-item.open .faq-q-ico{background:var(--accent);border-color:var(--accent);color:var(--dark);transform:rotate(45deg)}
+.faq-a{display:none;padding:0 0 22px;font-size:14px;color:var(--muted);line-height:1.8}
+.faq-item.open .faq-a{display:block}
+
+/* CTA FINAL */
+.cta-final{
+  position:relative;padding:110px 0;overflow:hidden;
+  background:var(--dark2);
+}
+.cta-final::before{
+  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:900px;height:900px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,212,255,0.1) 0%,transparent 65%);
+  pointer-events:none;
+}
+.cta-final::after{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(0,212,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.03) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+.cta-final__inner{position:relative;z-index:2;text-align:center;max-width:720px;margin:0 auto}
+.cta-final__tag{
+  display:inline-flex;align-items:center;gap:8px;margin-bottom:32px;
+  padding:8px 20px;background:rgba(0,212,255,0.1);
+  border:1px solid rgba(0,212,255,0.25);border-radius:100px;
+  font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;
+}
+.cta-final__title{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(52px,7vw,100px);line-height:.95;letter-spacing:.02em;color:var(--white);margin-bottom:20px;
+}
+.cta-final__title span{color:transparent;-webkit-text-stroke:1.5px var(--accent)}
+.cta-final__sub{font-size:17px;color:var(--muted);line-height:1.7;margin-bottom:44px}
+.cta-final__btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.btn-cta-main{
+  padding:18px 44px;background:var(--accent);color:var(--dark);
+  border:none;border-radius:100px;font-family:'Manrope',sans-serif;
+  font-size:16px;font-weight:800;cursor:pointer;transition:all .25s;
+}
+.btn-cta-main:hover{background:#33DDFF;transform:translateY(-2px);box-shadow:0 16px 50px rgba(0,212,255,0.3)}
+.btn-cta-outline{
+  padding:17px 36px;background:transparent;color:var(--white);
+  border:1px solid rgba(255,255,255,0.25);border-radius:100px;
+  font-family:'Manrope',sans-serif;font-size:16px;font-weight:700;cursor:pointer;transition:all .2s;
+}
+.btn-cta-outline:hover{border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.06)}
+.cta-final__trust{display:flex;justify-content:center;gap:32px;margin-top:44px;flex-wrap:wrap}
+.cta-trust-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--muted)}
+.cta-trust-dot{width:4px;height:4px;border-radius:50%;background:var(--accent)}
+
+/* MODAL */
+.modal-overlay{
+  display:none;position:fixed;inset:0;z-index:1000;
+  background:rgba(0,0,0,0.8);backdrop-filter:blur(10px);
+  align-items:center;justify-content:center;padding:20px;
+}
+.modal-overlay.open{display:flex}
+.modal{
+  background:var(--dark3);border:1px solid var(--glass-border);
+  border-radius:24px;padding:48px 44px 40px;
+  width:100%;max-width:480px;position:relative;
+}
+.modal__close{
+  position:absolute;top:16px;right:16px;
+  width:32px;height:32px;border-radius:50%;
+  background:rgba(255,255,255,0.06);border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--muted);font-size:18px;transition:all .2s;
+}
+.modal__close:hover{background:rgba(255,255,255,0.12);color:var(--white)}
+.modal__title{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:.02em;color:var(--white);margin-bottom:4px}
+.modal__sub{font-size:13px;color:var(--muted);margin-bottom:28px;line-height:1.6}
+
+/* FOOTER */
+.footer{background:var(--dark);border-top:1px solid var(--glass-border);padding:60px 0 28px}
+.footer__top{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  gap:40px;flex-wrap:wrap;margin-bottom:48px;
+}
+.footer__logo{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.06em;color:var(--white);margin-bottom:10px}
+.footer__logo span{color:var(--accent)}
+.footer__desc{font-size:13px;color:rgba(255,255,255,0.5);line-height:1.7;max-width:220px}
+.footer__nav{display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start;flex-direction:column}
+.footer__nav-link{font-size:14px;color:rgba(255,255,255,0.5);transition:color .2s}
+.footer__nav-link:hover{color:rgba(255,255,255,0.8)}
+.footer__contact{text-align:right}
+.footer__phone{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:.04em;color:var(--white);display:block;margin-bottom:4px;text-align:right}
+.footer__worktime{font-size:12px;color:rgba(255,255,255,0.5);text-align:right}
+.footer__div{height:1px;background:var(--glass-border);margin-bottom:24px}
+.footer__bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer__copy{font-size:12px;color:rgba(255,255,255,0.5)}
+.footer__policy{font-size:12px;color:rgba(255,255,255,0.5);transition:color .2s}
+.footer__policy:hover{color:rgba(255,255,255,0.6)}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+.reveal-l{opacity:0;transform:translateX(-30px);transition:opacity .7s ease,transform .7s ease}
+.reveal-l.in{opacity:1;transform:none}
+
+/* ══════════ RESPONSIVE ══════════ */
+@media(max-width:1100px){
+  :root{--nav-h:60px}
+  .nav{padding:0 24px}
+  .nav__menu{display:none}
+  .nav__actions{display:none}
+  .burger{display:flex}
+
+  /* hero — tablet */
+  .hero__topbar{padding:16px 32px 0;flex-wrap:wrap;gap:10px}
+  .hero__content{
+    grid-template-columns:1fr;
+    padding:20px 32px 48px;
+    gap:24px;
+    align-items:start;
+  }
+  .hero__photo{display:none}
+  .hero__form-card{display:none !important}
+  .hero__title{font-size:clamp(50px,7vw,90px)}
+  .hero__btns{flex-wrap:wrap}
+  .btn-hero{flex:1}
+  .btn-hero-outline{flex:1;min-width:0}
+
+  .hero__stats{flex-wrap:wrap;width:100%;border-radius:12px}
+  .hero__left{display:flex;flex-direction:column}
+  .hero__left-top{margin-top:20px}
+  .hero__stat{flex:1;min-width:100px;border-right:none;border-bottom:1px solid var(--glass-border);padding:14px 16px}
+  .hero__stat:nth-child(odd){border-right:1px solid var(--glass-border)}
+  .hero__stat:nth-last-child(-n+2){border-bottom:none}
+  .hero__stat:nth-child(2){border-bottom:1px solid var(--glass-border)}
+  .hero__stat:nth-child(3){border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border)}
+
+  .problems__split{grid-template-columns:1fr}
+  .problems__left{padding:48px 32px}
+  .problems__right{padding-left:0}
+
+  .bento{grid-template-columns:1fr 1fr}
+  .bc1,.bc2,.bc3,.bc4{grid-column:span 1}
+  .bc5{grid-column:span 2}
+  .bc6{grid-column:span 2}
+
+  .how__steps{grid-template-columns:1fr 1fr}
+  .how-step{border-right:none;border-bottom:1px solid var(--glass-border)}
+  .how-step:nth-child(odd){border-right:1px solid var(--glass-border)}
+  .how-step:last-child{border-bottom:none}
+  .how-step:nth-last-child(2):nth-child(odd){border-bottom:1px solid var(--glass-border)}
+  .how-step:nth-last-child(2):nth-child(even){border-bottom:none}
+
+  .guar__layout{grid-template-columns:1fr}
+  .guar-card{border-right:none}
+  .guar-card:nth-child(3){border-bottom:1px solid var(--glass-border)}
+
+  .calc__inner{grid-template-columns:1fr}
+
+  .reviews__grid{grid-template-columns:1fr 1fr}
+  .rev-card--future{grid-column:span 2}
+
+  .faq__layout{grid-template-columns:1fr;gap:40px}
+
+  .wrap{padding:0 32px}
+  .section{padding:80px 0}
+
+    .nav,
+  .mob-menu {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+
+@media(max-width:640px){
+  :root{--nav-h:56px}
+  .nav{padding:0 16px}
+  /* Global overflow protection on mobile */
+  body{overflow-x:hidden;max-width:100vw}
+  .section,.brands,.problems,.guar,.calc,.reviews,.faq,.cta-final,.footer{overflow-x:hidden}
+  img,svg{max-width:100%;height:auto}
+  /* Space between hero stats and ticker */
+  /* ticker flows naturally after hero */
+
+  /* hero — mobile: full width, no horizontal overflow */
+  /* hero height auto on tablet */
+  .hero__topbar{
+    padding:14px 16px 0;
+    gap:10px;
+    width:100%;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+  /* First pill — full width */
+  .hero__topbar .hero__pill:first-child{
+    width:100%;
+    justify-content:center;
+    max-width:100%;
+    box-sizing:border-box;
+  }
+  /* Second pill — centered */
+  .hero__topbar .hero__pill:last-child{
+    align-self:center;
+    max-width:none;
+  }
+
+  .hero__content{
+    grid-template-columns:1fr;
+    padding:12px 16px 36px;
+    gap:14px;
+    align-items:start;
+  }
+  .hero__photo{display:none}
+  .hero__left{height:auto;justify-content:flex-start;gap:16px;display:flex;flex-direction:column}
+  .hero__left-top{flex:none}
+  .hero__left-top{margin-top:0}
+  .hero__stats{margin-bottom:0}
+  .hero__title{font-size:clamp(36px,9.5vw,60px)}
+  .hero__sub{font-size:14px}
+  .hero__btns{flex-direction:column;gap:10px}
+  .btn-hero{width:100%;text-align:center}
+  .hero__stats{flex-direction:column;width:100%;border-radius:12px;margin-bottom:0}
+  .hero__stat{border-right:none !important;border-bottom:1px solid var(--glass-border);padding:12px 16px}
+  .hero__stat:last-child{border-bottom:none}
+  .hero__stat:nth-child(3){border-top:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border)}
+  .hero__form-card{display:none !important}
+
+  /* general */
+  .wrap{padding:0 16px}
+  .section{padding:64px 0}
+  .sec-title{font-size:clamp(26px,7.5vw,44px)}
+
+  .problems__left{padding:36px 20px 36px 20px}
+  .prob-row{padding:18px 16px;gap:12px}
+  .prob-row:hover{padding-left:20px}
+  .prob-row__badge{display:none}
+
+  .bento{grid-template-columns:1fr}
+  .bc1,.bc2,.bc3,.bc4,.bc5,.bc6{grid-column:span 1}
+  .bc6-inner{flex-direction:column;gap:20px}
+  .bc6-right{justify-content:center}
+
+  .how__steps{grid-template-columns:1fr}
+  .how-step{border-right:none !important;border-bottom:1px solid var(--glass-border)}
+  .how-step:last-child{border-bottom:none}
+
+  .guar__layout{grid-template-columns:1fr}
+  .guar-card{border-right:none;padding:28px 20px}
+  .guar-card:nth-child(3){border-bottom:1px solid var(--glass-border)}
+  .guar-card__title{font-size:18px}
+
+  .calc__inner{grid-template-columns:1fr}
+  .calc__form{padding:28px 20px}
+
+  .reviews__grid{grid-template-columns:1fr}
+  .rev-card--future{grid-column:span 1;min-height:100px}
+
+  .faq__layout{grid-template-columns:1fr;gap:32px}
+
+  .cta-final__btns{flex-direction:column;align-items:stretch}
+  .btn-cta-main,.btn-cta-outline{text-align:center;justify-content:center}
+  .cta-final__trust{gap:14px}
+
+  .footer__top{flex-direction:column;align-items:flex-start}
+  .footer__contact{text-align:left;width:100%}
+  .footer__phone{text-align:left}
+  .footer__worktime{text-align:left}
+  .footer__nav{flex-direction:row;gap:14px 20px;flex-wrap:wrap}
+  .footer__bot{flex-direction:column;text-align:center}
+
+  .mob-menu__link { font-size: 32px; }
+
+  .nav,
+  .mob-menu,
+  .hero__pill,
+  .hero__stats {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+/* Hero photo (вместо формы) */
+.hero__photo{
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;
+  align-self:stretch;
+  min-height:0;
+}
+.hero__photo img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  display:block;
+}
+
+</style>
 </head>
 <body>
-  
-  <div class="page-wrapper">
-    <div class="container">
 
-<!-- HERO КНОПКА -->
-<div class="hero-section">
-  <div class="hero-btn-wrapper">
-    <button class="hero-btn" id="btn-scroll-to-tabs">Смотреть аналитику</button>
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+  <div class="nav__logo">FIX<span class="nav__logo-dot">.</span>GARANT</div>
+  <div class="nav__menu">
+    <a href="#services" class="nav__link">Услуги</a>
+    <a href="#how" class="nav__link">Как работаем</a>
+    <a href="#guarantees" class="nav__link">Гарантии</a>
+    <a href="#reviews" class="nav__link">Отзывы</a>
+    <a href="#faq" class="nav__link">FAQ</a>
   </div>
+  <div class="nav__actions">
+    <a href="tel:+79697773690" class="nav__tel" id="navTel">+7 (969) 777-36-90</a>
+    <button class="nav__cta" onclick="openModal()">Вызвать мастера</button>
+  </div>
+  <button class="burger" id="burger" aria-label="Меню">
+    <span class="burger-bar"></span>
+    <span class="burger-bar"></span>
+    <span class="burger-bar"></span>
+  </button>
+</nav>
 
-    <!-- ПОДВАЛ -->
-    <div class="hm-foot">
-      <span class="hm-upd" id="hm-upd">Загрузка...</span>
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <a href="#services" class="mob-menu__link" onclick="closeMob()">Услуги</a>
+  <a href="#how" class="mob-menu__link" onclick="closeMob()">Как работаем</a>
+  <a href="#guarantees" class="mob-menu__link" onclick="closeMob()">Гарантии</a>
+  <a href="#reviews" class="mob-menu__link" onclick="closeMob()">Отзывы</a>
+  <a href="#faq" class="mob-menu__link" onclick="closeMob()">FAQ</a>
+  <a href="tel:+79697773690" class="mob-menu__tel">📞 +7 (969) 777-36-90</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__grid"></div>
+  <div class="hero__overlay"></div>
+
+  <div class="hero__topbar">
+    <div class="hero__pill">
+      <span class="hero__pill-dot"></span>
+      Мастера свободны прямо сейчас
     </div>
-
-  </div>
-  <!-- конец ТЕПЛОВАЯ КАРТА -->
-
-</div>
-
-<!-- ТУЛТИП АКЦИИ (вне hero-section, рендерится поверх всего) -->
-<div id="hm-tip">
-  <div class="t-head"><span class="t-ticker" id="tt"></span><span class="t-pct" id="tp"></span></div>
-  <div class="t-name" id="tn"></div>
-  <div class="t-sec"  id="ts"></div>
-  <div class="t-grid">
-    <div><div class="t-lbl">ЦЕНА</div><div class="t-val" id="tpr"></div></div>
-    <div><div class="t-lbl">ИЗМ. ЗА ДЕНЬ</div><div class="t-val" id="ta"></div></div>
-    <div><div class="t-lbl">ОБЪЁМ ЗА ДЕНЬ</div><div class="t-val" id="tv"></div></div>
-    <div><div class="t-lbl" id="tw-lbl">ВЕС В IMOEX</div><div class="t-val" id="tw"></div></div>
-  </div>
-  <div class="t-slbl">МЕСЯЧНЫЙ ГРАФИК</div>
-  <div id="tsp"><span class="t-sph">загрузка...</span></div>
-</div>
-
-      <!-- ВЕРХНИЕ ТАБЫ: РФ / Зарубежный -->
-      <div class="market-tabs">
-        <button class="market-tab active" data-market="ru">
-          <img src="Photo/RU-flag.svg" alt="RU" width="64" height="48">
-          Российский рынок
-        </button>
-        <button class="market-tab" data-market="us">
-          <img src="Photo/USA-flag.svg" alt="USA" width="64" height="48">
-          Зарубежный рынок
-        </button>
-      </div>
-
-      <!-- НИЖНИЕ ТАБЫ: Новости / Ожидаемые события -->
-      <div class="section-tabs">
-        <button class="section-tab active" data-section="news">Новости</button>
-        <button class="section-tab" data-section="events">Ожидаемые события</button>
-        <button class="section-tab" data-section="heatmap">Тепловая карта</button>
-      </div>
-
-      <!-- КОНТЕНТ: НОВОСТИ -->
-      <div class="news-section-wrapper content-area">
-  <div class="news-toolbar">
-    <button class="refresh-btn" id="btn-refresh-news">Обновить</button>
-  </div>
-  <div id="news-container" class="cards-container"></div>
-</div>
-
-      <!-- КОНТЕНТ: ОЖИДАЕМЫЕ СОБЫТИЯ -->
-      <div id="events-container" class="content-area" style="display:none;">
-
-        <!-- ФИЛЬТРЫ -->
-        <div class="events-filters">
-
-          <div class="filter-dropdown" id="filter-day">
-            <button class="filter-btn">
-              <span class="filter-label">День недели</span>
-              <svg width="35" height="19" viewBox="0 0 35 19" class="filter-arrow"><use href="#icon-arrow"/></svg>
-            </button>
-            <div class="filter-menu">
-              <div class="filter-item" data-value="">Все дни</div>
-              <div class="filter-item" data-value="Понедельник">Понедельник</div>
-              <div class="filter-item" data-value="Вторник">Вторник</div>
-              <div class="filter-item" data-value="Среда">Среда</div>
-              <div class="filter-item" data-value="Четверг">Четверг</div>
-              <div class="filter-item" data-value="Пятница">Пятница</div>
-              <div class="filter-item" data-value="Суббота">Суббота</div>
-              <div class="filter-item" data-value="Воскресенье">Воскресенье</div>
-            </div>
-          </div>
-
-          <div class="filter-dropdown" id="filter-currency">
-            <button class="filter-btn">
-              <span class="filter-label">Валюта</span>
-              <svg width="35" height="19" viewBox="0 0 35 19" class="filter-arrow"><use href="#icon-arrow"/></svg>
-            </button>
-            <div class="filter-menu">
-              <div class="filter-item" data-value="">Все валюты</div>
-              <div class="filter-item" data-value="USD">USD</div>
-              <div class="filter-item" data-value="EUR">EUR</div>
-              <div class="filter-item" data-value="GBP">GBP</div>
-              <div class="filter-item" data-value="JPY">JPY</div>
-              <div class="filter-item" data-value="AUD">AUD</div>
-              <div class="filter-item" data-value="NZD">NZD</div>
-              <div class="filter-item" data-value="CAD">CAD</div>
-              <div class="filter-item" data-value="CHF">CHF</div>
-              <div class="filter-item" data-value="CNY">CNY</div>
-            </div>
-          </div>
-
-          <div class="filter-dropdown" id="filter-impact">
-            <button class="filter-btn">
-              <span class="filter-label">Влияние</span>
-              <svg width="35" height="19" viewBox="0 0 35 19" class="filter-arrow"><use href="#icon-arrow"/></svg>
-            </button>
-            <div class="filter-menu">
-              <div class="filter-item" data-value="">Любое</div>
-              <div class="filter-item" data-value="High">Высокое</div>
-              <div class="filter-item" data-value="Medium">Среднее</div>
-              <div class="filter-item" data-value="Low">Низкое</div>
-            </div>
-          </div>
-
-            <button class="refresh-btn" id="btn-refresh-events">Обновить</button>
-
-        </div>
-
-        <!-- Шапка-плашка с названиями столбцов -->
-        <div class="events-header">
-          <span class="ev-col ev-col--time">Время</span>
-          <span class="ev-col ev-col--currency">Валюта</span>
-          <span class="ev-col ev-col--title">Событие</span>
-          <span class="ev-col ev-col--previous">Предыдущий</span>
-          <span class="ev-col ev-col--forecast">Прогноз</span>
-          <span class="ev-col ev-col--impact">Влияние</span>
-        </div>
-
-        <!-- Карточки событий -->
-        <div id="events-cards" class="events-cards"></div>
-
-      </div>
-
+    <div class="hero__pill" style="background:rgba(34,255,136,0.08);border-color:rgba(34,255,136,0.2);color:rgba(255,255,255,0.6)">
+      ⭐ 5.0 · Яндекс Карты
     </div>
   </div>
 
-  <!-- КОНТЕНТ: ТЕПЛОВАЯ КАРТА РФ -->
-      <!-- ТЕПЛОВАЯ КАРТА РФ — показывается когда активен таб "Российский рынок" + "Тепловая карта" -->
-      <div id="heatmap-ru-container" class="content-area heatmap-section" style="display:none;">
-        <div class="hm-bc hidden" id="hm-bc-ru">
-          <span class="hm-bc-back" id="hm-bc-back-ru">&#8592; Все секторы</span>
-          <span class="hm-bc-sep">•</span>
-          <span class="hm-bc-cur" id="hm-bc-cur-ru"></span>
+  <div class="hero__content">
+    <div class="hero__left">
+      <div class="hero__left-top">
+        <h1 class="hero__title">
+          ХОЛОДИЛЬНИК<br>
+          <span class="hero__title-accent">СЛОМАЛСЯ?</span>
+          ПОЧИНИМ
+        </h1>
+        <p class="hero__sub">
+          <strong>Выезд мастера за 1–2 часа.</strong> Бесплатная диагностика, оплата только после ремонта. Гарантия до 3 лет на все работы.
+        </p>
+        <div class="hero__btns">
+          <button class="btn-hero btn-hero-primary" onclick="openModal()">🔧 Вызвать мастера — бесплатно</button>
+          <a href="tel:+79697773690" class="btn-hero btn-hero-outline">📞 Позвонить сейчас</a>
         </div>
-        <div class="hm-filter" id="hm-filter-ru"></div>
-        <div class="hm-body" id="hm-body-ru">
-          <div class="hm-ctrl">
-            <button class="hm-cbtn" id="bzi-ru">+</button>
-            <button class="hm-cbtn" id="bzo-ru">−</button>
-            <button class="hm-cbtn sm" id="bzr-ru">⊞</button>
+      </div><!-- /hero__left-top -->
+      <div class="hero__stats">
+        <div class="hero__stat">
+          <div class="hero__stat-num">0<span> ₽</span></div>
+          <div class="hero__stat-label">Выезд и диагностика</div>
+        </div>
+        <div class="hero__stat">
+          <div class="hero__stat-num">1–2<span> ч</span></div>
+          <div class="hero__stat-label">Время ожидания</div>
+        </div>
+        <div class="hero__stat">
+          <div class="hero__stat-num">3<span> года</span></div>
+          <div class="hero__stat-label">Гарантия</div>
+        </div>
+        <div class="hero__stat">
+          <div class="hero__stat-num">7<span> дн</span></div>
+          <div class="hero__stat-label">Без выходных</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__photo">
+      <img src="Photo/Cold.png" alt="Ремонт холодильника на дому" width="460" height="600" loading="eager" fetchpriority="high">
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker__track" id="tickerTrack">
+    <span class="ticker__item"><span class="ticker__sep"></span>Бесплатный выезд и диагностика</span>
+    <span class="ticker__item"><span class="ticker__sep"></span>Оплата только после ремонта</span>
+    <span class="ticker__item"><span class="ticker__sep"></span>Гарантия до 3 лет</span>
+    <span class="ticker__item"><span class="ticker__sep"></span>Работаем 7 дней в неделю</span>
+    <span class="ticker__item"><span class="ticker__sep"></span>Мастер за 1–2 часа</span>
+    <span class="ticker__item"><span class="ticker__sep"></span>Официальный чек и гарантийный талон</span>
+    <span class="ticker__item"><span class="ticker__sep"></span>Все марки холодильников</span>
+    <span class="ticker__item"><span class="ticker__sep"></span>Бесплатный выезд и диагностика</span>
+    <span class="ticker__item"><span class="ticker__sep"></span>Оплата только после ремонта</span>
+    <span class="ticker__item"><span class="ticker__sep"></span>Гарантия до 3 лет</span>
+    <span class="ticker__item"><span class="ticker__sep"></span>Работаем 7 дней в неделю</span>
+    <span class="ticker__item"><span class="ticker__sep"></span>Мастер за 1–2 часа</span>
+    <span class="ticker__item"><span class="ticker__sep"></span>Официальный чек и гарантийный талон</span>
+    <span class="ticker__item"><span class="ticker__sep"></span>Все марки холодильников</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="problems__split">
+    <div class="problems__left reveal-l">
+      <div class="eyebrow" style="color:var(--accent)">Неисправности</div>
+      <h2 class="sec-title" style="font-size:clamp(32px,3.5vw,54px)">ЧТО<br>СЛУЧИЛОСЬ<br>С ВАШИМ<br>ХОЛОДИЛЬ-<br>НИКОМ?</h2>
+      <p class="problems__lsub">Выберите симптом — мастер приедет и устранит неисправность прямо у вас дома.</p>
+      <button class="btn-hero btn-hero-primary" onclick="openModal()" style="width:fit-content">Вызвать мастера бесплатно</button>
+    </div>
+    <div class="problems__right">
+      <div class="prob-row" onclick="openModal()">
+        <div class="prob-row__num">01</div>
+        <div class="prob-row__icon">🌡️</div>
+        <div class="prob-row__body">
+          <div class="prob-row__title">Не морозит / Сильно греется</div>
+          <div class="prob-row__desc">Не держит температуру, продукты портятся. Чаще — утечка фреона или компрессор.</div>
+        </div>
+        <div class="prob-row__badge">0 ₽ диагностика</div>
+        <div class="prob-row__arrow">→</div>
+      </div>
+      <div class="prob-row" onclick="openModal()">
+        <div class="prob-row__num">02</div>
+        <div class="prob-row__icon">❄️</div>
+        <div class="prob-row__body">
+          <div class="prob-row__title">Перемораживает / Намораживает лёд</div>
+          <div class="prob-row__desc">Наледь на стенках, продукты замерзают в холодильном отделе.</div>
+        </div>
+        <div class="prob-row__badge">0 ₽ диагностика</div>
+        <div class="prob-row__arrow">→</div>
+      </div>
+      <div class="prob-row" onclick="openModal()">
+        <div class="prob-row__num">03</div>
+        <div class="prob-row__icon">💧</div>
+        <div class="prob-row__body">
+          <div class="prob-row__title">Протекает</div>
+          <div class="prob-row__desc">Вода под холодильником или внутри камеры. Засор дренажа или повреждение.</div>
+        </div>
+        <div class="prob-row__badge">0 ₽ диагностика</div>
+        <div class="prob-row__arrow">→</div>
+      </div>
+      <div class="prob-row" onclick="openModal()">
+        <div class="prob-row__num">04</div>
+        <div class="prob-row__icon">🔊</div>
+        <div class="prob-row__body">
+          <div class="prob-row__title">Шумит / Щёлкает / Вибрирует</div>
+          <div class="prob-row__desc">Посторонние звуки при работе. Проблема с вентилятором или компрессором.</div>
+        </div>
+        <div class="prob-row__badge">0 ₽ диагностика</div>
+        <div class="prob-row__arrow">→</div>
+      </div>
+      <div class="prob-row" onclick="openModal()">
+        <div class="prob-row__num">05</div>
+        <div class="prob-row__icon">⚡</div>
+        <div class="prob-row__body">
+          <div class="prob-row__title">Не включается / Не отключается</div>
+          <div class="prob-row__desc">Нет реакции или компрессор работает без остановки.</div>
+        </div>
+        <div class="prob-row__badge">0 ₽ диагностика</div>
+        <div class="prob-row__arrow">→</div>
+      </div>
+      <div class="prob-row" onclick="openModal()">
+        <div class="prob-row__num">06</div>
+        <div class="prob-row__icon">📱</div>
+        <div class="prob-row__body">
+          <div class="prob-row__title">Ошибка на экране</div>
+          <div class="prob-row__desc">Код ошибки или мигающий индикатор. Диагностируем и устраняем причину.</div>
+        </div>
+        <div class="prob-row__badge">0 ₽ диагностика</div>
+        <div class="prob-row__arrow">→</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY — BENTO -->
+<section class="section why" id="why">
+  <div class="wrap">
+    <div class="eyebrow reveal">Почему мы</div>
+    <h2 class="sec-title reveal">УСЛОВИЯ,<br>КОТОРЫЕ ВЫГОДНЫ<br>ВАМ</h2>
+    <div class="bento">
+      <div class="bento-card bc1 reveal">
+        <div class="bento-card__big">0<span class="bento-card__unit">₽</span></div>
+        <div class="bento-card__title">Выезд и диагностика — бесплатно</div>
+        <div class="bento-card__text">Мастер приедет домой без предоплаты. Определим поломку и назовём точную стоимость до начала работ. Если откажетесь — ничего не платите.</div>
+        <div class="bento-card__tag">Без предоплаты</div>
+      </div>
+      <div class="bento-card bc2 reveal">
+        <div class="bento-card__icon">💳</div>
+        <div class="bento-card__title">Оплата только после результата</div>
+        <div class="bento-card__text">Никакой предоплаты. Платите только после того, как убедились — холодильник работает. Наличные или карта.</div>
+      </div>
+      <div class="bento-card bc3 reveal">
+        <div class="bento-card__icon">⚡</div>
+        <div class="bento-card__title">Мастер за 1–2 часа</div>
+        <div class="bento-card__text">В день обращения. Вы выбираете удобное время — утро, день или вечер.</div>
+      </div>
+      <div class="bento-card bc4 reveal">
+        <div class="bento-card__icon">📋</div>
+        <div class="bento-card__title">Официальный чек и гарантийный талон</div>
+        <div class="bento-card__text">Выдаём документы с печатью. Никакой работы «в карман».</div>
+      </div>
+      <div class="bento-card bc5 reveal">
+        <div class="bento-card__icon">🔩</div>
+        <div class="bento-card__title">Запчасти всегда с собой</div>
+        <div class="bento-card__text">Мастер приезжает готовым к работе. Большинство ремонтов закрываются за один визит — без повторных выездов и ожидания деталей.</div>
+      </div>
+      <div class="bento-card bc6 reveal">
+        <div class="bc6-inner">
+          <div class="bc6-left">
+            <div class="bento-card__title" style="font-size:22px;color:var(--white)">Гарантия до 3 лет на все виды работ</div>
+            <div class="bento-card__text" style="margin-top:8px">Если та же неисправность повторится в гарантийный период — устраним абсолютно бесплатно.</div>
+          </div>
+          <div class="bc6-right">
+            <div class="bc6-stat">
+              <div class="bc6-stat__num" style="color:var(--accent)">3</div>
+              <div class="bc6-stat__label">года гарантии</div>
+            </div>
+            <div class="bc6-stat">
+              <div class="bc6-stat__num">7</div>
+              <div class="bc6-stat__label">дней в неделю</div>
+            </div>
+            <div class="bc6-stat">
+              <div class="bc6-stat__num" style="color:var(--green)">0₽</div>
+              <div class="bc6-stat__label">за диагностику</div>
+            </div>
           </div>
         </div>
-        <div class="hm-foot">
-          <span class="hm-upd" id="hm-upd-ru">Загрузка...</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="eyebrow reveal">Процесс</div>
+    <h2 class="sec-title reveal">КАК МЫ РАБОТАЕМ</h2>
+    <p class="sec-sub reveal">Четыре простых шага — и холодильник снова работает идеально.</p>
+    <div class="how__steps">
+      <div class="how-step reveal">
+        <div class="how-step__num">01</div>
+        <div class="how-step__icon">📞</div>
+        <div class="how-step__title">Оставляете заявку</div>
+        <div class="how-step__text">Звоните или отправляете заявку онлайн. Обсуждаем симптомы, выбираете удобное время визита.</div>
+        <div class="how-step__time">≈ 5 минут</div>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-step__num">02</div>
+        <div class="how-step__icon">🚗</div>
+        <div class="how-step__title">Мастер приезжает</div>
+        <div class="how-step__text">Приедем за 1–2 часа с инструментом и запчастями. Без предоплаты и лишних условий.</div>
+        <div class="how-step__time">1–2 часа</div>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-step__num">03</div>
+        <div class="how-step__icon">🔍</div>
+        <div class="how-step__title">Бесплатная диагностика</div>
+        <div class="how-step__text">Определяем неисправность и называем точную стоимость. Вы решаете — начинать ремонт или нет.</div>
+        <div class="how-step__time">15–30 минут</div>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-step__num">04</div>
+        <div class="how-step__icon">✅</div>
+        <div class="how-step__title">Ремонт и гарантия</div>
+        <div class="how-step__text">Устраняем неисправность. Вы проверяете и оплачиваете. Выдаём чек и гарантийный талон.</div>
+        <div class="how-step__time">30–120 минут</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<div class="brands">
+  <div class="wrap">
+    <div class="brands__label">Ремонтируем все популярные марки</div>
+    <div class="brands__list">
+      <div class="brand-tag">Samsung</div>
+      <div class="brand-tag">LG</div>
+      <div class="brand-tag">Bosch</div>
+      <div class="brand-tag">Indesit</div>
+      <div class="brand-tag">Atlant</div>
+      <div class="brand-tag">Hotpoint</div>
+      <div class="brand-tag">Haier</div>
+      <div class="brand-tag">Whirlpool</div>
+      <div class="brand-tag">Nord</div>
+      <div class="brand-tag">Liebherr</div>
+      <div class="brand-tag">Siemens</div>
+      <div class="brand-tag">AEG</div>
+      <div class="brand-tag">Gorenje</div>
+      <div class="brand-tag">Ariston</div>
+      <div class="brand-tag">Electrolux</div>
+      <div class="brand-tag">и другие</div>
+    </div>
+  </div>
+</div>
+
+<!-- GUARANTEES -->
+<section class="guar section" id="guarantees">
+  <div class="wrap">
+    <div class="eyebrow reveal">Гарантии</div>
+    <h2 class="sec-title reveal">МЫ НЕСЁМ<br>РЕАЛЬНУЮ<br>ОТВЕТСТВЕННОСТЬ</h2>
+    <div class="guar__layout">
+      <div class="guar-card reveal">
+        <div class="guar-card__icon">🛡️</div>
+        <div class="guar-card__title">Гарантия до 3 лет</div>
+        <div class="guar-card__text">На все виды выполненных работ. Если та же неисправность проявится в гарантийный период — устраним абсолютно бесплатно.</div>
+        <div class="guar-card__pill">До 3 лет</div>
+      </div>
+      <div class="guar-card reveal">
+        <div class="guar-card__icon">💰</div>
+        <div class="guar-card__title">Оплата только после результата</div>
+        <div class="guar-card__text">Никакой предоплаты. Вы платите лишь после того, как убедились: холодильник работает так, как должен.</div>
+        <div class="guar-card__pill">0 ₽ предоплата</div>
+      </div>
+      <div class="guar-card reveal">
+        <div class="guar-card__icon">📋</div>
+        <div class="guar-card__title">Официальный чек и гарантийный талон</div>
+        <div class="guar-card__text">После каждого ремонта выдаём фискальный чек и гарантийный талон с печатью. Ваш документальный щит на весь гарантийный срок.</div>
+        <div class="guar-card__pill">Чек + талон</div>
+      </div>
+      <div class="guar-card reveal">
+        <div class="guar-card__icon">🤝</div>
+        <div class="guar-card__title">Честная диагностика</div>
+        <div class="guar-card__text">Если ремонт нецелесообразен — скажем об этом честно. Вы не платите ни копейки за диагностику, которая не дала результата.</div>
+        <div class="guar-card__pill">Без скрытых платежей</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="calc section" id="calc">
+  <div class="wrap">
+    <div class="eyebrow reveal">Стоимость ремонта</div>
+    <h2 class="sec-title reveal">СКОЛЬКО ЭТО СТОИТ?</h2>
+    <div class="calc__inner">
+      <div class="calc__form reveal">
+        <label class="calc__label" for="calcSelect">Выберите неисправность</label>
+        <select class="calc__select" id="calcSelect" onchange="calcPrice()">
+          <option value="">— Выбрать —</option>
+          <option value="1">Не морозит | Сильно греется</option>
+          <option value="2">Шумит | Щёлкает</option>
+          <option value="3">Протекает</option>
+          <option value="4">Перемораживает | Намораживает лёд</option>
+          <option value="5">Не включается | Не отключается</option>
+          <option value="6">Ошибка на экране</option>
+        </select>
+        <div class="calc__result" id="calcResult">
+          <div class="calc__result-label">Ориентировочная стоимость</div>
+          <div class="calc__result-price" id="calcPrice">—</div>
+          <div class="calc__result-note">* Без стоимости запчастей. Точную цену назовёт мастер после бесплатной диагностики.</div>
         </div>
       </div>
-
-      <!-- КОНТЕНТ: ТЕПЛОВАЯ КАРТА США (Nasdaq 100) -->
-      <!-- ТЕПЛОВАЯ КАРТА США — показывается когда активен таб "Зарубежный рынок" + "Тепловая карта" -->
-      <div id="heatmap-us-container" class="content-area heatmap-section" style="display:none;">
-        <div class="hm-bc hidden" id="hm-bc-us">
-          <span class="hm-bc-back" id="hm-bc-back-us">&#8592; Все секторы</span>
-          <span class="hm-bc-sep">•</span>
-          <span class="hm-bc-cur" id="hm-bc-cur-us"></span>
+      <div class="calc__right reveal">
+        <h3>КАЧЕСТВО И<br>ГАРАНТИЯ ДО 3 ЛЕТ</h3>
+        <p>Мы не просто чиним — мы несём ответственность за результат. Каждый ремонт подтверждён официальным чеком и гарантийным талоном с печатью.</p>
+        <div class="calc__checks">
+          <div class="calc__check"><span class="calc__check-dot"></span>Гарантия на работы — до 3 лет</div>
+          <div class="calc__check"><span class="calc__check-dot"></span>Официальный чек после ремонта</div>
+          <div class="calc__check"><span class="calc__check-dot"></span>Гарантийный талон с печатью</div>
+          <div class="calc__check"><span class="calc__check-dot"></span>Повторная поломка — устраним бесплатно</div>
         </div>
-        <div class="hm-filter" id="hm-filter-us"></div>
-        <div class="hm-body" id="hm-body-us">
-          <div class="hm-ctrl">
-            <button class="hm-cbtn" id="bzi-us">+</button>
-            <button class="hm-cbtn" id="bzo-us">−</button>
-            <button class="hm-cbtn sm" id="bzr-us">⊞</button>
+        <button class="btn-calc" onclick="openModal()">Вызвать мастера бесплатно →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews section" id="reviews">
+  <div class="wrap">
+    <div class="reviews__top">
+      <div>
+        <div class="eyebrow reveal">Отзывы</div>
+        <h2 class="sec-title reveal">ЧТО ГОВОРЯТ<br>НАШИ КЛИЕНТЫ</h2>
+      </div>
+      <a href="https://yandex.ru/profile/53881462513" target="_blank" rel="noopener noreferrer" class="ya-link">Все отзывы на Яндексе →</a>
+    </div>
+    <div class="reviews__grid">
+      <div class="rev-card reveal">
+        <div class="rev-stars">★★★★★</div>
+        <div class="rev-text">Холодильник дома очень сильно начал шуметь ночью — вызвал мастера, уже через час всё было тихо. Приехал быстро, всё объяснил, дал гарантийный талон. Отличный сервис, рекомендую!</div>
+        <div class="rev-foot">
+          <div class="rev-person">
+            <div class="rev-ava"><img src="Photo/Review1.png" alt="Вадим Красовский" width="40" height="40" style="width:100%;height:100%;object-fit:cover;border-radius:50%" onerror="this.style.display='none'"></div>
+            <div>
+              <div class="rev-name">Vadim Krasovskuy</div>
+              <div class="rev-date">06 мая 2026</div>
+            </div>
           </div>
-        </div>
-        <div class="hm-foot">
-          <span class="hm-upd" id="hm-upd-us">Загрузка...</span>
+          <div class="rev-src">Яндекс Карты</div>
         </div>
       </div>
+      <div class="rev-card reveal">
+        <div class="rev-stars">★★★★★</div>
+        <div class="rev-text">Быстро и качественно. Сотрудники вежливые, объяснили что и почему сломалось, назвали цену до начала работ — никаких сюрпризов. Остался доволен, буду обращаться снова.</div>
+        <div class="rev-foot">
+          <div class="rev-person">
+            <div class="rev-ava"><img src="Photo/Review2.png" alt="Артём" width="40" height="40" style="width:100%;height:100%;object-fit:cover;border-radius:50%" onerror="this.style.display='none'"></div>
+            <div>
+              <div class="rev-name">Артём</div>
+              <div class="rev-date">07 мая 2026</div>
+            </div>
+          </div>
+          <div class="rev-src">Яндекс Карты</div>
+        </div>
+      </div>
+      <div class="rev-card rev-card--future reveal">
+        <div class="rev-card--future__inner">
+          <div class="rev-card--future__emoji">😊</div>
+          <div class="rev-card--future__text">Ваш будущий отзыв</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <!-- ТУЛТИП АКЦИИ — общий для обеих карт -->
-      <div id="hm-tip">
-        <div class="t-head"><span class="t-ticker" id="tt"></span><span class="t-pct" id="tp"></span></div>
-        <div class="t-name" id="tn"></div>
-        <div class="t-sec"  id="ts"></div>
-        <div class="t-grid">
-          <div><div class="t-lbl">ЦЕНА</div><div class="t-val" id="tpr"></div></div>
-          <div><div class="t-lbl">ИЗМ. ЗА ДЕНЬ</div><div class="t-val" id="ta"></div></div>
-          <div><div class="t-lbl">ОБЪЁМ ЗА ДЕНЬ</div><div class="t-val" id="tv"></div></div>
-          <div><div class="t-lbl" id="tw-lbl">ВЕС В IMOEX</div><div class="t-val" id="tw"></div></div>
-        </div>
-        <div class="t-slbl">МЕСЯЧНЫЙ ГРАФИК</div>
-        <div id="tsp"><span class="t-sph">загрузка...</span></div>
+<!-- FAQ -->
+<section class="faq section" id="faq">
+  <div class="wrap">
+    <div class="faq__layout">
+      <div class="reveal-l">
+        <div class="eyebrow">FAQ</div>
+        <h2 class="sec-title">ЧАСТЫЕ<br>ВОПРОСЫ</h2>
+        <p class="sec-sub" style="font-size:15px;margin-top:8px">Если не нашли ответ — позвоните нам, расскажем подробнее.</p>
+        <button class="btn-faq" onclick="openModal()" style="margin-top:24px">Задать вопрос мастеру</button>
       </div>
-      
-<script src="stars.js"></script>
-<script src="script.js"></script>
+      <div class="faq__list reveal">
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-q-text">Сколько стоит выезд мастера?</span><span class="faq-q-ico">+</span></div>
+          <div class="faq-a">Выезд мастера абсолютно бесплатный. Диагностика тоже бесплатна. Вы платите только за выполненную работу и запчасти — и только после того, как ремонт завершён.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-q-text">Как быстро приедет мастер?</span><span class="faq-q-ico">+</span></div>
+          <div class="faq-a">В большинстве случаев мастер приезжает в день обращения. Вы сами выбираете удобное время — утро, день или вечер. Минимальное время ожидания — 1–2 часа после звонка.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-q-text">Даёте ли вы гарантию на ремонт?</span><span class="faq-q-ico">+</span></div>
+          <div class="faq-a">Да, на все виды работ предоставляется гарантия до 3 лет. После ремонта вы получаете гарантийный талон с печатью. Если та же неисправность повторится — устраним бесплатно.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-q-text">Нужно ли везти холодильник к вам?</span><span class="faq-q-ico">+</span></div>
+          <div class="faq-a">Нет. Мы работаем исключительно на выезд — ремонтируем прямо у вас дома. Везти холодильник никуда не нужно: мастер приедет с необходимыми инструментами и запчастями.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-q-text">Что если холодильник не удастся починить?</span><span class="faq-q-ico">+</span></div>
+          <div class="faq-a">Если ремонт технически невозможен или нецелесообразен — мы честно скажем об этом. Вы не обязаны соглашаться на ремонт и не платите за работу, которая не была выполнена.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-q-text">Какие марки вы ремонтируете?</span><span class="faq-q-ico">+</span></div>
+          <div class="faq-a">Ремонтируем холодильники всех популярных марок: Samsung, LG, Indesit, Bosch, Atlant, Hotpoint, Haier, Whirlpool, Nord, Liebherr, Siemens и других. Если вашей марки нет — уточните по телефону.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q"><span class="faq-q-text">Как и когда оплачивать ремонт?</span><span class="faq-q-ico">+</span></div>
+          <div class="faq-a">Оплата только после завершения ремонта и вашей проверки результата. Принимаем наличные и перевод на карту. Никаких предоплат и скрытых платежей.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="wrap">
+    <div class="cta-final__inner">
+      <div class="cta-final__tag">⚡ Выезд в день обращения</div>
+      <h2 class="cta-final__title">НЕ ЖДИТЕ —<br>ВЫЗОВИТЕ<br><span>МАСТЕРА</span></h2>
+      <p class="cta-final__sub">Каждый час промедления — риск для продуктов. Мастер приедет за 1–2 часа, диагностика бесплатна.</p>
+      <div class="cta-final__btns">
+        <button class="btn-cta-main" onclick="openModal()">🔧 Вызвать мастера бесплатно</button>
+        <a href="tel:+79697773690" class="btn-cta-outline">📞 +7 (969) 777-36-90</a>
+      </div>
+      <div class="cta-final__trust">
+        <div class="cta-trust-item"><span class="cta-trust-dot"></span>Выезд и диагностика 0 ₽</div>
+        <div class="cta-trust-item"><span class="cta-trust-dot"></span>Оплата после ремонта</div>
+        <div class="cta-trust-item"><span class="cta-trust-dot"></span>Гарантия до 3 лет</div>
+        <div class="cta-trust-item"><span class="cta-trust-dot"></span>Без выходных</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div>
+        <div class="footer__logo">FIX<span>.</span>GARANT</div>
+        <div class="footer__desc">Ремонт холодильников на дому. Выезд в день обращения. Гарантия до 3 лет.</div>
+      </div>
+      <div class="footer__nav">
+        <a href="#services" class="footer__nav-link">Услуги</a>
+        <a href="#how" class="footer__nav-link">Как работаем</a>
+        <a href="#guarantees" class="footer__nav-link">Гарантии</a>
+        <a href="#reviews" class="footer__nav-link">Отзывы</a>
+        <a href="#faq" class="footer__nav-link">FAQ</a>
+      </div>
+      <div class="footer__contact">
+        <a href="tel:+79697773690" class="footer__phone">+7 (969) 777-36-90</a>
+        <div class="footer__worktime">Работаем ежедневно, без выходных</div>
+      </div>
+    </div>
+    <div class="footer__div"></div>
+    <div class="footer__bot">
+      <div class="footer__copy">© 2026 Fix Garant. Все права защищены.</div>
+      <a href="privacy.html" target="_blank" class="footer__policy">Политика конфиденциальности</a>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="modal__close" id="modalClose">✕</button>
+    <div class="modal__title">ВЫЗВАТЬ МАСТЕРА</div>
+    <div class="modal__sub">Перезвоним в течение 10 минут</div>
+    <form class="sltop__form" id="modalForm" action="https://newapi.ru/bt/addorders?idp=5e1a87a2-acb5-3a73-6bc3012ad02195b1">
+      <input class="f-input" id="mName" name="fullname" type="text" placeholder="Ваше имя (необязательно)" autocomplete="off">
+      <input class="f-input" id="mPhone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" maxlength="18" autocomplete="off">
+      <div class="f-err" id="mPhoneErr">Введите корректный номер телефона</div>
+      <div class="f-cb-row">
+        <input type="checkbox" class="f-cb" id="mConsent">
+        <label for="mConsent" class="f-cb-box"></label>
+        <span class="f-cb-text">Согласен на обработку персональных данных согласно <a href="privacy.html" target="_blank" class="f-cb-link">Политике конфиденциальности</a></span>
+      </div>
+      <div class="f-consent-err" id="mConsentErr">Необходимо ваше согласие</div>
+      <input type="hidden" name="branch_id" value="0">
+      <input type="hidden" name="is_pm" value="false">
+      <input type="hidden" name="thread_id" value="52244">
+      <input type="hidden" name="thread_type" value="3">
+      <input type="hidden" name="sub_id1" value="">
+      <input type="hidden" name="sub_id2" value="">
+      <input type="hidden" name="sub_id3" value="">
+      <input type="hidden" name="direction_id" value="2">
+      <input type="hidden" name="offer_id" value="2">
+      <button type="submit" class="f-submit" id="mSubmit">Отправить заявку →</button>
+    </form>
+    <div class="hfc__lock">🔒 Данные защищены · Без спама</div>
+  </div>
+</div>
+
+<script src="https://lk.newapi.ru/stat/52244/js"></script>
+
+<script>
+// Nav
+window.addEventListener('scroll',function(){
+  document.getElementById('mainNav').classList.toggle('solid',window.scrollY>80)
+})
+
+// Burger
+var burger=document.getElementById('burger'),mob=document.getElementById('mobMenu')
+burger.addEventListener('click',function(){
+  var o=mob.classList.toggle('open')
+  burger.classList.toggle('open',o)
+  document.body.style.overflow=o?'hidden':''
+})
+function closeMob(){mob.classList.remove('open');burger.classList.remove('open');document.body.style.overflow=''}
+
+// Modal
+function openModal(){
+  var sw=window.innerWidth-document.documentElement.clientWidth
+  document.body.style.paddingRight=sw+'px'
+  document.getElementById('modalOverlay').classList.add('open')
+  document.body.style.overflow='hidden'
+}
+function closeModal(){
+  document.getElementById('modalOverlay').classList.remove('open')
+  document.body.style.overflow=''
+  document.body.style.paddingRight=''
+}
+document.getElementById('modalClose').addEventListener('click',closeModal)
+document.getElementById('modalOverlay').addEventListener('click',function(e){if(e.target===this)closeModal()})
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal()})
+
+// Phone mask
+function phoneMask(el){
+  el.addEventListener('input',function(){
+    var v=this.value.replace(/\D/g,'')
+    if(!v.length){this.value='';return}
+    if(v[0]==='7'||v[0]==='8')v='7'+v.slice(1);else v='7'+v
+    var r='+7'
+    if(v.length>1)r+=' ('+v.slice(1,4)
+    if(v.length>=4)r+=') '+v.slice(4,7)
+    if(v.length>=7)r+='-'+v.slice(7,9)
+    if(v.length>=9)r+='-'+v.slice(9,11)
+    this.value=r
+  })
+  el.addEventListener('keydown',function(e){if(e.key==='Backspace'&&this.value==='+7')this.value=''})
+}
+phoneMask(document.getElementById('mPhone'))
+
+// Form
+function urlEnc(fd){
+  var p=new URLSearchParams()
+  for(var pair of fd.entries())if(typeof pair[1]==='string')p.append(pair[0],pair[1])
+  return p.toString()
+}
+function handleForm(form,phoneId,phoneErrId,consentId,consentErrId,submitId,onOk){
+  var ph=document.getElementById(phoneId)
+  var ok=ph.value.replace(/\D/g,'').length===11
+  ph.classList.toggle('err',!ok)
+  document.getElementById(phoneErrId).classList.toggle('show',!ok)
+  var con=document.getElementById(consentId).checked
+  document.getElementById(consentErrId).classList.toggle('show',!con)
+  if(!ok||!con)return
+  var btn=document.getElementById(submitId)
+  btn.disabled=true;btn.textContent='Отправляем...'
+  var fd=new FormData(form)
+  var up=new URLSearchParams(window.location.search)
+  ;[['utm_source','utm1'],['utm_medium','utm2'],['utm_campaign','utm3'],['utm_content','utm4'],['utm_term','utm5']].forEach(function(p){if(up.get(p[0]))fd.append(p[1],up.get(p[0]))})
+  if(window.view_id){fd.append('view_id',window.view_id);fd.append('hash',window.view_id)}
+  var XHR=('onload' in new XMLHttpRequest())?XMLHttpRequest:XDomainRequest
+  var xhr=new XHR()
+  xhr.open('POST',form.action,true)
+  xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded')
+  xhr.onload=function(){
+    if(xhr.status===200){
+      if(typeof ym==='function')ym(108723709,'reachGoal','form_sent')
+      form.reset()
+      btn.textContent='Заявка принята ✓'
+      if(onOk)onOk()
+      setTimeout(function(){btn.disabled=false;btn.textContent='Отправить заявку →'},2000)
+    }else{btn.disabled=false;btn.textContent='Отправить заявку →';alert('Ошибка. Попробуйте ещё раз.')}
+  }
+  xhr.send(urlEnc(fd))
+}
+
+document.getElementById('modalForm').addEventListener('submit',function(e){
+  e.preventDefault();handleForm(this,'mPhone','mPhoneErr','mConsent','mConsentErr','mSubmit',function(){setTimeout(closeModal,1500)})
+})
+
+// FAQ
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click',function(){
+    var item=this.closest('.faq-item')
+    var was=item.classList.contains('open')
+    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')})
+    if(!was)item.classList.add('open')
+  })
+})
+
+// Calculator
+var prices={'1':'от 1 000 ₽','2':'от 1 500 ₽','3':'от 1 000 ₽','4':'от 1 500 ₽','5':'от 1 500 ₽','6':'от 1 500 ₽'}
+function calcPrice(){
+  var v=document.getElementById('calcSelect').value
+  var res=document.getElementById('calcResult')
+  if(v&&prices[v]){document.getElementById('calcPrice').textContent=prices[v];res.classList.add('show')}
+  else res.classList.remove('show')
+}
+
+// Scroll reveal
+var io=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+  })
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'})
+document.querySelectorAll('.reveal,.reveal-l').forEach(function(el){io.observe(el)})
+
+// Bento glow
+document.querySelectorAll('.bento-card').forEach(function(card){
+  card.addEventListener('mousemove',function(e){
+    var r=card.getBoundingClientRect()
+    card.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%')
+    card.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%')
+  })
+})
+
+// Phone goals
+var navTel=document.getElementById('navTel');
+if(navTel){
+  var tip=document.createElement('span');tip.className='nav__tel__tooltip';tip.textContent='Копировать';navTel.style.position='relative';navTel.appendChild(tip);
+  var tipTimer=null;
+  function isMob(){return window.matchMedia('(hover:none)').matches}
+  navTel.addEventListener('mouseenter',function(){if(tipTimer||isMob())return;tip.textContent='Копировать';tip.classList.remove('copied');tip.classList.add('visible');});
+  navTel.addEventListener('mouseleave',function(){if(tipTimer)return;tip.classList.remove('visible','copied');});
+  navTel.addEventListener('click',function(e){
+    if(isMob())return;e.preventDefault();
+    if(typeof ym==='function')ym(108723709,'reachGoal','phone_click');
+    if(tipTimer)clearTimeout(tipTimer);
+    function doCopy(){tip.textContent='Скопировано!';tip.classList.add('visible','copied');tipTimer=setTimeout(function(){tip.classList.remove('visible','copied');tipTimer=null;},1200);}
+    navigator.clipboard.writeText('+79697773690').then(doCopy).catch(function(){var t=document.createElement('input');document.body.appendChild(t);t.value='+79697773690';t.select();document.execCommand('copy');document.body.removeChild(t);doCopy();});
+  });
+}
+document.querySelectorAll('a[href^="tel:"]').forEach(function(l){
+  l.addEventListener('click',function(){if(typeof ym==='function')ym(108723709,'reachGoal','phone_click')})
+})
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var t=document.querySelector(this.getAttribute('href'))
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}
+  })
+})
+
+// Ticker seamless loop
+var t=document.getElementById('tickerTrack');
+t.innerHTML+=t.innerHTML;
+var tickerPos=0;
+var tickerSpeed=window.innerWidth<1100?1.5:0.5;
+var tickerHalf=0;
+function tickerInit(){requestAnimationFrame(function(){tickerHalf=t.scrollWidth/2})}
+function tickerAnimate(){
+  tickerPos-=tickerSpeed;
+  if(Math.abs(tickerPos)>=tickerHalf)tickerPos=0;
+  t.style.transform='translateX('+tickerPos+'px)';
+  requestAnimationFrame(tickerAnimate);
+}
+window.addEventListener('load',function(){tickerInit();requestAnimationFrame(tickerAnimate)});
+
+</script>
+
+<script>
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=108723709','ym');
+ym(108723709,'init',{ssr:true,webvisor:true,clickmap:true,referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/108723709" style="position:absolute;left:-9999px;" alt=""></div></noscript>
 
 </body>
 </html>
