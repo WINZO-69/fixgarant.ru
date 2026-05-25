@@ -1703,7 +1703,7 @@ var REGION_MAP = {
 (function(){
   var list = document.getElementById('navCityList');
   var raw = new URLSearchParams(window.location.search).get('city');
-  var activeCity = raw ? (REGION_MAP[raw] || raw) : null;
+  var activeCity = raw ? (REGION_MAP[raw] || null) : null;
 
   CITIES.forEach(function(c){
     var d = document.createElement('div');
