@@ -802,12 +802,14 @@ img{display:block;max-width:100%}
 @media(max-width:640px){
   :root{--nav-h:56px}
   .nav{padding:0 16px}
+  .nav__logo{display:none}
+  .nav__left{flex:1;margin-left:0}
+  .nav__city img:first-child{width:15px !important;height:15px !important}
+  .burger{margin-left:30px;flex-shrink:0}
   /* Global overflow protection on mobile */
   body{overflow-x:hidden;max-width:100vw}
   .section,.brands,.problems,.guar,.calc,.reviews,.faq,.cta-final,.footer{overflow-x:hidden}
   img,svg{max-width:100%;height:auto}
-  /* Space between hero stats and ticker */
-  /* ticker flows naturally after hero */
 
   /* hero — mobile: full width, no horizontal overflow */
   /* hero height auto on tablet */
@@ -833,7 +835,7 @@ img{display:block;max-width:100%}
 
   .hero__content{
     grid-template-columns:1fr;
-    padding:12px 16px 36px;
+    padding: 45px 16px 36px;
     gap:14px;
     align-items:start;
   }
@@ -920,13 +922,74 @@ img{display:block;max-width:100%}
   display:block;
 }
 
+.city-drop-item{
+  padding:9px 14px;font-size:13px;font-weight:600;
+  color:rgba(255,255,255,0.6);cursor:pointer;transition:all .15s;
+}
+.city-drop-item:hover{background:rgba(0,212,255,0.08);color:#fff}
+.city-drop-item.active{color:#00D4FF}
+
+.nav__left{
+  display:flex;align-items:center;
+}
+.nav__city{
+  display:flex;align-items:center;gap:6px;
+  margin-left:30px;
+  font-size:13px;font-weight:600;
+  color:rgba(255,255,255,0.7);letter-spacing:.06em;
+  white-space:nowrap;
+  flex-shrink:0;
+  position:relative;
+  cursor:pointer;
+  user-select:none;
+  padding:8px 18px;
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:100px;
+  background:rgba(0,0,0,0.2);
+}
+@media(max-width:1100px){
+  .nav__left{flex:1}
+  .nav__city{
+    flex:1;
+    justify-content:center;
+    margin-left:16px;
+  }
+}
+
+@media(max-width:640px){
+  .nav__city{
+    flex:0 0 auto !important;
+    justify-content:flex-start !important;
+    margin-left:0 !important;
+  }
+}
+
+
+
+#navCityDrop{min-width:180px;white-space:normal}
+@media(max-width:640px){
+  #navCityDrop{min-width:0;width:100%}
+  #navCityDrop .city-drop-item{font-size:12px}
+}
+
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav class="nav" id="mainNav">
-  <div class="nav__logo">FIX<span class="nav__logo-dot">.</span>GARANT</div>
+<div class="nav__left">
+<div class="nav__logo">FIX <span class="nav__logo-garant">GARANT</span></div>
+<div class="nav__city" id="navCity" onclick="toggleNavCity()">
+  <img src="Photo/location.svg" width="20" height="20" alt="">
+  <span id="navCityName">Выбрать город</span>
+  <img id="navCityArrow" src="Photo/arrow.svg" width="10" height="10" alt="" style="transition:transform .25s;display:inline-block;margin-left:2px;">
+  <div id="navCityDrop" style="display:none;position:absolute;top:calc(100% + 8px);left:0;background:#0D1420;border:1px solid rgba(255,255,255,0.12);border-radius:12px;overflow:hidden;z-index:999;">
+    <div style="font-size:10px;color:rgba(255,255,255,0.35);padding:10px 14px 6px;letter-spacing:.08em;text-transform:uppercase;">Работаем в городах</div>
+    <div id="navCityList"></div>
+  </div>
+</div>
+</div>
   <div class="nav__menu">
     <a href="#services" class="nav__link">Услуги</a>
     <a href="#how" class="nav__link">Как работаем</a>
@@ -947,6 +1010,7 @@ img{display:block;max-width:100%}
 
 <!-- MOBILE MENU -->
 <div class="mob-menu" id="mobMenu">
+  <div style="font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:.08em;color:rgba(255,255,255,0.9);margin-bottom:8px;">FIX GARANT</div>
   <a href="#services" class="mob-menu__link" onclick="closeMob()">Услуги</a>
   <a href="#how" class="mob-menu__link" onclick="closeMob()">Как работаем</a>
   <a href="#guarantees" class="mob-menu__link" onclick="closeMob()">Гарантии</a>
@@ -962,10 +1026,10 @@ img{display:block;max-width:100%}
   <div class="hero__overlay"></div>
 
   <div class="hero__topbar">
-    <div class="hero__pill">
-      <span class="hero__pill-dot"></span>
-      Мастера свободны прямо сейчас
-    </div>
+<div class="hero__pill">
+  <span class="hero__pill-dot"></span>
+Мастера сегодня свободны в вашем городе
+</div>
     <div class="hero__pill" style="background:rgba(34,255,136,0.08);border-color:rgba(34,255,136,0.2);color:rgba(255,255,255,0.6)">
       ⭐ 5.0 · Яндекс Карты
     </div>
@@ -974,6 +1038,8 @@ img{display:block;max-width:100%}
   <div class="hero__content">
     <div class="hero__left">
       <div class="hero__left-top">
+
+
         <h1 class="hero__title">
           ХОЛОДИЛЬНИК<br>
           <span class="hero__title-accent">СЛОМАЛСЯ?</span>
@@ -1420,7 +1486,7 @@ img{display:block;max-width:100%}
   <div class="wrap">
     <div class="footer__top">
       <div>
-        <div class="footer__logo">FIX<span>.</span>GARANT</div>
+        <div class="footer__logo">FIX GARANT</div>
         <div class="footer__desc">Ремонт холодильников на дому. Выезд в день обращения. Гарантия до 3 лет.</div>
       </div>
       <div class="footer__nav">
@@ -1620,28 +1686,59 @@ document.querySelectorAll('a[href^="tel:"]').forEach(function(l){
   l.addEventListener('click',function(){if(typeof ym==='function')ym(108723709,'reachGoal','phone_click')})
 })
 
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(function(a){
-  a.addEventListener('click',function(e){
-    var t=document.querySelector(this.getAttribute('href'))
-    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}
-  })
-})
+// City
+var CITIES = ['Кострома','Вологда','Мурманск','Сургут','Астрахань','Кемерово','Новокузнецк','Томск','Ставрополь'];
+var REGION_MAP = {
+  'Костромская область':'Кострома',
+  'Вологодская область':'Вологда',
+  'Мурманская область':'Мурманск',
+  'Ханты-Мансийский автономный округ — Югра':'Сургут',
+  'Астраханская область':'Астрахань',
+  'Кемеровская область':'Кемерово',
+  'Кузбасс':'Кемерово',
+  'Томская область':'Томск',
+  'Ставропольский край':'Ставрополь'
+};
 
-// Ticker seamless loop
-var t=document.getElementById('tickerTrack');
-t.innerHTML+=t.innerHTML;
-var tickerPos=0;
-var tickerSpeed=window.innerWidth<1100?1.5:0.5;
-var tickerHalf=0;
-function tickerInit(){requestAnimationFrame(function(){tickerHalf=t.scrollWidth/2})}
-function tickerAnimate(){
-  tickerPos-=tickerSpeed;
-  if(Math.abs(tickerPos)>=tickerHalf)tickerPos=0;
-  t.style.transform='translateX('+tickerPos+'px)';
-  requestAnimationFrame(tickerAnimate);
+(function(){
+  var list = document.getElementById('navCityList');
+  var raw = new URLSearchParams(window.location.search).get('city');
+  var activeCity = raw ? (REGION_MAP[raw] || raw) : null;
+
+  CITIES.forEach(function(c){
+    var d = document.createElement('div');
+    d.className = 'city-drop-item' + (c === activeCity ? ' active' : '');
+    d.textContent = c;
+    d.onclick = function(e){
+      e.stopPropagation();
+      document.getElementById('navCityName').textContent = c;
+      document.querySelectorAll('#navCityList .city-drop-item').forEach(function(el){
+        el.classList.toggle('active', el.textContent === c);
+      });
+      closeNavCity();
+    };
+    list.appendChild(d);
+  });
+
+  if(activeCity){
+    document.getElementById('navCityName').textContent = activeCity;
+  }
+})();
+
+var navCityOpen = false;
+function toggleNavCity(){
+  navCityOpen = !navCityOpen;
+  document.getElementById('navCityDrop').style.display = navCityOpen ? 'block' : 'none';
+  document.getElementById('navCityArrow').style.transform = navCityOpen ? 'rotate(180deg)' : '';
 }
-window.addEventListener('load',function(){tickerInit();requestAnimationFrame(tickerAnimate)});
+function closeNavCity(){
+  navCityOpen = false;
+  document.getElementById('navCityDrop').style.display = 'none';
+  document.getElementById('navCityArrow').style.transform = '';
+}
+document.addEventListener('click', function(e){
+  if(!document.getElementById('navCity').contains(e.target)) closeNavCity();
+});
 
 </script>
 
