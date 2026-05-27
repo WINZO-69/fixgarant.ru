@@ -1676,7 +1676,6 @@ if(navTel){
   navTel.addEventListener('mouseleave',function(){if(tipTimer)return;tip.classList.remove('visible','copied');});
   navTel.addEventListener('click',function(e){
     if(isMob())return;e.preventDefault();
-    if(typeof ym==='function')ym(108723709,'reachGoal','phone_click');
     if(tipTimer)clearTimeout(tipTimer);
     function doCopy(){tip.textContent='Скопировано!';tip.classList.add('visible','copied');tipTimer=setTimeout(function(){tip.classList.remove('visible','copied');tipTimer=null;},1200);}
     navigator.clipboard.writeText('+79697773690').then(doCopy).catch(function(){var t=document.createElement('input');document.body.appendChild(t);t.value='+79697773690';t.select();document.execCommand('copy');document.body.removeChild(t);doCopy();});
